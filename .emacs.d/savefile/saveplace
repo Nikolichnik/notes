@@ -1,0 +1,22 @@
+;;; -*- coding: utf-8 -*-
+(("c:/Users/Nikolichnik/Documents/work/notes/"
+  (dired-filename . "c:/Users/Nikolichnik/Documents/work/notes/notes.org"))
+ ("c:/Users/Nikolichnik/Documents/work/notes/notes.org" . 18908)
+ ("c:/Users/Nikolichnik/.emacs.d/savefile/recentf" . 1597)
+ ("c:/Users/Nikolichnik/.emacs.d/url/cookies" . 1076)
+ ("c:/Users/Nikolichnik/.emacs.d/"
+  (dired-filename . "c:/Users/Nikolichnik/.emacs.d/projectile-bookmarks.eld"))
+ ("c:/Users/Nikolichnik/.emacs.d/elpa/ag-20180225.1040/ag-autoloads.el" . 3041)
+ ("c:/Users/Nikolichnik/.emacs.d/elpa/s-20180406.808/s-autoloads.el" . 228)
+ ("c:/Users/Nikolichnik/Documents/Spacemacs/emacs/share/emacs/25.3/lisp/startup.el" . 37830)
+ ("c:/Users/Nikolichnik/Documents/work/notes/pdf/" . 285)
+ ("c:/Users/Nikolichnik/.emacs.d/elpa/org-9.1.14/org-loaddefs.el" . 87610)
+ ("c:/Users/Nikolichnik/.emacs.d/elpa/org-pdfview-20180225.1006/org-pdfview-autoloads.el" . 248)
+ ("c:/Users/Nikolichnik/.emacs.d/elpa/org-9.1.14/org-autoloads.el" . 28876)
+ ("c:/Users/Nikolichnik/.emacs.d/elpa/pdf-tools-20181022.1633/pdf-tools-autoloads.el" . 11693)
+ ("c:/Users/Nikolichnik/.emacs.d/elpa/tablist-20170220.335/tablist-autoloads.el" . 775)
+ ("c:/Users/Nikolichnik/Documents/work/cheat-sheet.org" . 317968)
+ ("c:/Users/Nikolichnik/.emacs.d/elpa/company-20181023.1412/company-autoloads.el" . 9168)
+ ("c:/Users/Nikolichnik/Documents/work/notes/notes.tex" . 19310)
+ ("c:/Users/Nikolichnik/Documents/work/notes/notes.html" . 35193)
+ ("c:/Users/Nikolichnik/.emacs.d/elpa/org-bullets-20180208.2343/org-bullets-autoloads.el" . 422))

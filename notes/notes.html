@@ -1,0 +1,797 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>notes</title>
+<!-- 2018-10-24 sre 14:29 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">notes</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Git&#xa0;&#xa0;&#xa0;<span class="tag"><span class="git">git</span></span></a>
+<ul>
+<li><a href="#sec-1-1">1.1. Cheatsheet</a>
+<ul>
+<li><a href="#sec-1-1-1">1.1.1. Basics</a></li>
+<li><a href="#sec-1-1-2">1.1.2. Undoing Changes</a></li>
+<li><a href="#sec-1-1-3">1.1.3. Rewriting Git History</a></li>
+<li><a href="#sec-1-1-4">1.1.4. Git Branches</a></li>
+<li><a href="#sec-1-1-5">1.1.5. Remote Repositories</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-2">1.2. Install Git</a>
+<ul>
+<li><a href="#sec-1-2-1">1.2.1. Install Git on Linux</a></li>
+<li><a href="#sec-1-2-2">1.2.2. <span class="todo TODO">TODO</span> Install Git on Windows</a></li>
+<li><a href="#sec-1-2-3">1.2.3. <span class="todo TODO">TODO</span> Install Git on Mac</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-3">1.3. What is Git?</a>
+<ul>
+<li><a href="#sec-1-3-1">1.3.1. Performance</a></li>
+<li><a href="#sec-1-3-2">1.3.2. Security</a></li>
+<li><a href="#sec-1-3-3">1.3.3. Flexibility</a></li>
+<li><a href="#sec-1-3-4">1.3.4. Version control with Git</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-4">1.4. Concepts and Benefits</a></li>
+<li><a href="#sec-1-5">1.5. Git for developers</a>
+<ul>
+<li><a href="#sec-1-5-1">1.5.1. Feature Branch Workflow</a></li>
+<li><a href="#sec-1-5-2">1.5.2. Distributed Development</a></li>
+<li><a href="#sec-1-5-3">1.5.3. Pull Requests</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#sec-2">2. Java&#xa0;&#xa0;&#xa0;<span class="tag"><span class="java">java</span></span></a>
+<ul>
+<li><a href="#sec-2-1">2.1. Spring&#xa0;&#xa0;&#xa0;<span class="tag"><span class="spring">spring</span></span></a>
+<ul>
+<li><a href="#sec-2-1-1">2.1.1. Dependency Injection&#xa0;&#xa0;&#xa0;<span class="tag"><span class="di">di</span></span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Git&#xa0;&#xa0;&#xa0;<span class="tag"><span class="git">git</span></span></h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Cheatsheet</h3>
+<div class="outline-text-3" id="text-1-1">
+</div><div id="outline-container-sec-1-1-1" class="outline-4">
+<h4 id="sec-1-1-1"><span class="section-number-4">1.1.1</span> Basics</h4>
+<div class="outline-text-4" id="text-1-1-1">
+</div><ol class="org-ol"><li><a id="sec-1-1-1-1" name="sec-1-1-1-1"></a>git init &lt;directory&gt;<br  /><div class="outline-text-5" id="text-1-1-1-1">
+<p>
+Create empty Git repo in specified directory. Run with no arguments
+to initialize the current directory as a git repository.
+</p>
+</div>
+</li>
+<li><a id="sec-1-1-1-2" name="sec-1-1-1-2"></a>git clone &lt;repo&gt;<br  /><div class="outline-text-5" id="text-1-1-1-2">
+<p>
+Clone repo located at &lt;repo&gt; onto local machine. Original repo can be
+located on the local filesystem or on a remote machine via HTTP or SSH.
+</p>
+</div>
+</li>
+<li><a id="sec-1-1-1-3" name="sec-1-1-1-3"></a>git config user.name &lt;name&gt;<br  /><div class="outline-text-5" id="text-1-1-1-3">
+<p>
+Define author name to be used for all commits in current repo. Devs
+commonly use &#x2013;global flag to set config options for current user.
+</p>
+</div>
+<ol class="org-ol"><li><a id="sec-1-1-1-3-1" name="sec-1-1-1-3-1"></a>git config &#x2013;global user.name &lt;name&gt;<br  /><div class="outline-text-6" id="text-1-1-1-3-1">
+<p>
+Define the author name to be used for all commits by the current user.
+</p>
+</div>
+</li>
+<li><a id="sec-1-1-1-3-2" name="sec-1-1-1-3-2"></a>git config &#x2013;global user.email &lt;email&gt;<br  /><div class="outline-text-6" id="text-1-1-1-3-2">
+<p>
+Define the author email to be used for all commits by the current user.
+</p>
+</div>
+</li>
+<li><a id="sec-1-1-1-3-3" name="sec-1-1-1-3-3"></a>git config &#x2013;global alias. &lt;alias-name&gt; &lt;git-command&gt;<br  /><div class="outline-text-6" id="text-1-1-1-3-3">
+<p>
+Create shortcut for a Git command. E.g. alias.glog log &#x2013;graph
+&#x2013;oneline will set git glog equivalent to git log &#x2013;graph &#x2013;oneline.
+</p>
+</div>
+</li>
+<li><a id="sec-1-1-1-3-4" name="sec-1-1-1-3-4"></a>git config &#x2013;system core.editor &lt;editor&gt;<br  /><div class="outline-text-6" id="text-1-1-1-3-4">
+<p>
+Set text editor used by commands for all users on the machine. &lt;editor&gt;
+arg should be the command that launches the desired editor (e.g., vi).
+</p>
+</div>
+</li>
+<li><a id="sec-1-1-1-3-5" name="sec-1-1-1-3-5"></a>git config &#x2013;global &#x2013;edit<br  /><div class="outline-text-6" id="text-1-1-1-3-5">
+<p>
+Open the global configuration file in a text editor for manual editing.
+</p>
+</div>
+</li></ol>
+</li>
+<li><a id="sec-1-1-1-4" name="sec-1-1-1-4"></a>git add &lt;directory&gt;<br  /><div class="outline-text-5" id="text-1-1-1-4">
+<p>
+Stage all changes in &lt;directory&gt; for the next commit.
+Replace &lt;directory&gt; with a &lt;file&gt; to change a specific file. To stage all changes for the next commit, git add . is appropriate command.
+</p>
+</div>
+</li>
+<li><a id="sec-1-1-1-5" name="sec-1-1-1-5"></a>git commit -m "&lt;message&gt;"<br  /><div class="outline-text-5" id="text-1-1-1-5">
+<p>
+Commit the staged snapshot, but instead of launching a text editor,
+use &lt;message&gt; as the commit message.
+</p>
+</div>
+<ol class="org-ol"><li><a id="sec-1-1-1-5-1" name="sec-1-1-1-5-1"></a>git commit &#x2013;amend<br  /><div class="outline-text-6" id="text-1-1-1-5-1">
+<p>
+Replace the last commit with the staged changes and last commit
+combined. Use with nothing staged to edit the last commit’s message.
+</p>
+</div>
+</li></ol>
+</li>
+<li><a id="sec-1-1-1-6" name="sec-1-1-1-6"></a>git status<br  /><div class="outline-text-5" id="text-1-1-1-6">
+<p>
+List which files are staged, unstaged, and untracked.
+</p>
+</div>
+</li>
+<li><a id="sec-1-1-1-7" name="sec-1-1-1-7"></a>git log<br  /><div class="outline-text-5" id="text-1-1-1-7">
+<p>
+Display the entire commit history using the default format.
+</p>
+</div>
+<ol class="org-ol"><li><a id="sec-1-1-1-7-1" name="sec-1-1-1-7-1"></a>git log -&lt;limit&gt;<br  /><div class="outline-text-6" id="text-1-1-1-7-1">
+<p>
+Limit number of commits by &lt;limit&gt;. E.g. git log -5 will limit to 5
+commits.
+</p>
+</div>
+</li>
+<li><a id="sec-1-1-1-7-2" name="sec-1-1-1-7-2"></a>git log &#x2013;oneline<br  /><div class="outline-text-6" id="text-1-1-1-7-2">
+<p>
+Condense each commit to a single line.
+</p>
+</div>
+</li>
+<li><a id="sec-1-1-1-7-3" name="sec-1-1-1-7-3"></a>git log -p<br  /><div class="outline-text-6" id="text-1-1-1-7-3">
+<p>
+Display the full diff of each commit.
+</p>
+</div>
+</li>
+<li><a id="sec-1-1-1-7-4" name="sec-1-1-1-7-4"></a>git log &#x2013;stat<br  /><div class="outline-text-6" id="text-1-1-1-7-4">
+<p>
+Include which files were altered and the relative number of lines
+that were added or deleted from each of them.
+</p>
+</div>
+</li>
+<li><a id="sec-1-1-1-7-5" name="sec-1-1-1-7-5"></a>git log &#x2013;author="&lt;pattern&gt;"<br  /><div class="outline-text-6" id="text-1-1-1-7-5">
+<p>
+Search for commits by a particular author.
+</p>
+</div>
+</li>
+<li><a id="sec-1-1-1-7-6" name="sec-1-1-1-7-6"></a>git log &#x2013;grep="&lt;pattern&gt;"<br  /><div class="outline-text-6" id="text-1-1-1-7-6">
+<p>
+Search for commits with a commit message that matches &lt;pattern&gt;.
+</p>
+</div>
+</li>
+<li><a id="sec-1-1-1-7-7" name="sec-1-1-1-7-7"></a>git log &lt;since&gt;..&lt;until&gt;<br  /><div class="outline-text-6" id="text-1-1-1-7-7">
+<p>
+Show commits that occur between &lt;since&gt; and &lt;until&gt;. Args can be a
+commit ID, branch name, HEAD, or any other kind of revision reference.
+</p>
+</div>
+</li>
+<li><a id="sec-1-1-1-7-8" name="sec-1-1-1-7-8"></a>git log &#x2013; &lt;file&gt;<br  /><div class="outline-text-6" id="text-1-1-1-7-8">
+<p>
+Only display commits that have the specified file.
+</p>
+</div>
+</li>
+<li><a id="sec-1-1-1-7-9" name="sec-1-1-1-7-9"></a>git log &#x2013;graph &#x2013;decorate<br  /><div class="outline-text-6" id="text-1-1-1-7-9">
+<p>
+&#x2013;graph flag draws a text based graph of commits on left side of commit
+msgs. &#x2013;decorate adds names of branches or tags of commits shown.
+</p>
+</div>
+</li></ol>
+</li>
+<li><a id="sec-1-1-1-8" name="sec-1-1-1-8"></a>git diff<br  /><div class="outline-text-5" id="text-1-1-1-8">
+<p>
+Show unstaged changes between your index and working directory.
+</p>
+</div>
+<ol class="org-ol"><li><a id="sec-1-1-1-8-1" name="sec-1-1-1-8-1"></a>git diff HEAD<br  /><div class="outline-text-6" id="text-1-1-1-8-1">
+<p>
+Show difference between working directory and last commit.
+</p>
+</div>
+</li>
+<li><a id="sec-1-1-1-8-2" name="sec-1-1-1-8-2"></a>git diff &#x2013;cached<br  /><div class="outline-text-6" id="text-1-1-1-8-2">
+<p>
+Show difference between staged changes and last commit.
+</p>
+</div>
+</li></ol>
+</li></ol>
+</div>
+<div id="outline-container-sec-1-1-2" class="outline-4">
+<h4 id="sec-1-1-2"><span class="section-number-4">1.1.2</span> Undoing Changes</h4>
+<div class="outline-text-4" id="text-1-1-2">
+</div><ol class="org-ol"><li><a id="sec-1-1-2-1" name="sec-1-1-2-1"></a>git revert &lt;commit&gt;<br  /><div class="outline-text-5" id="text-1-1-2-1">
+<p>
+Create new commit that undoes all of the changes made in
+&lt;commit&gt;, then apply it to the current branch.
+</p>
+</div>
+</li>
+<li><a id="sec-1-1-2-2" name="sec-1-1-2-2"></a>git reset<br  /><div class="outline-text-5" id="text-1-1-2-2">
+<p>
+Reset staging area to match most recent commit, but leave the
+working directory unchanged.
+</p>
+</div>
+<ol class="org-ol"><li><a id="sec-1-1-2-2-1" name="sec-1-1-2-2-1"></a>git reset &lt;file&gt;<br  /><div class="outline-text-6" id="text-1-1-2-2-1">
+<p>
+Remove &lt;file&gt; from the staging area, but leave the working directory
+unchanged. This unstages a file without overwriting any changes.
+</p>
+</div>
+</li>
+<li><a id="sec-1-1-2-2-2" name="sec-1-1-2-2-2"></a>git reset &#x2013;hard<br  /><div class="outline-text-6" id="text-1-1-2-2-2">
+<p>
+Reset staging area and working directory to match most recent
+commit and overwrites all changes in the working directory.
+</p>
+</div>
+</li>
+<li><a id="sec-1-1-2-2-3" name="sec-1-1-2-2-3"></a>git reset &lt;commit&gt;<br  /><div class="outline-text-6" id="text-1-1-2-2-3">
+<p>
+Move the current branch tip backward to &lt;commit&gt;, reset the
+staging area to match, but leave the working directory alone.
+</p>
+</div>
+</li>
+<li><a id="sec-1-1-2-2-4" name="sec-1-1-2-2-4"></a>git reset &#x2013;hard &lt;commit&gt;<br  /><div class="outline-text-6" id="text-1-1-2-2-4">
+<p>
+Move the current branch tip backward to &lt;commit&gt;, reset the
+staging area to match, resets both the staging area &amp; working directory to
+match. Deletes uncommitted changes, and all commits after &lt;commit&gt;.
+</p>
+</div>
+</li></ol>
+</li>
+<li><a id="sec-1-1-2-3" name="sec-1-1-2-3"></a>git clean -n<br  /><div class="outline-text-5" id="text-1-1-2-3">
+<p>
+Shows which files would be removed from working directory. Use
+the -f flag in place of the -n flag to execute the clean.
+</p>
+</div>
+</li></ol>
+</div>
+<div id="outline-container-sec-1-1-3" class="outline-4">
+<h4 id="sec-1-1-3"><span class="section-number-4">1.1.3</span> Rewriting Git History</h4>
+<div class="outline-text-4" id="text-1-1-3">
+</div><ol class="org-ol"><li><a id="sec-1-1-3-1" name="sec-1-1-3-1"></a>git commit &#x2013;amend<br  /><div class="outline-text-5" id="text-1-1-3-1">
+<p>
+Replace the last commit with the staged changes and last commit
+combined. Use with nothing staged to edit the last commit’s message.
+</p>
+</div>
+</li>
+<li><a id="sec-1-1-3-2" name="sec-1-1-3-2"></a>git rebase &lt;base&gt;<br  /><div class="outline-text-5" id="text-1-1-3-2">
+<p>
+Rebase the current branch onto &lt;base&gt;. &lt;base&gt; can be a commit ID,
+a branch name, a tag, or a relative reference to HEAD.
+</p>
+</div>
+<ol class="org-ol"><li><a id="sec-1-1-3-2-1" name="sec-1-1-3-2-1"></a>git rebase -i &lt;base&gt;<br  /><div class="outline-text-6" id="text-1-1-3-2-1">
+<p>
+Interactively rebase current branch onto &lt;base&gt;. Launches editor to enter
+commands for how each commit will be transferred to the new base.
+</p>
+</div>
+</li></ol>
+</li>
+<li><a id="sec-1-1-3-3" name="sec-1-1-3-3"></a>git reflog<br  /><div class="outline-text-5" id="text-1-1-3-3">
+<p>
+Show a log of changes to the local repository’s HEAD. Add
+&#x2013;relative-date flag to show date info or &#x2013;all to show all refs
+</p>
+</div>
+</li></ol>
+</div>
+<div id="outline-container-sec-1-1-4" class="outline-4">
+<h4 id="sec-1-1-4"><span class="section-number-4">1.1.4</span> Git Branches</h4>
+<div class="outline-text-4" id="text-1-1-4">
+</div><ol class="org-ol"><li><a id="sec-1-1-4-1" name="sec-1-1-4-1"></a>git branch<br  /><div class="outline-text-5" id="text-1-1-4-1">
+<p>
+List all of the branches in your repo. Add a &lt;branch&gt; argument to
+create a new branch with the name &lt;branch&gt;.
+</p>
+</div>
+</li>
+<li><a id="sec-1-1-4-2" name="sec-1-1-4-2"></a>git checkout -b &lt;branch&gt;<br  /><div class="outline-text-5" id="text-1-1-4-2">
+<p>
+Create and check out a new branch named &lt;branch&gt;. Drop the -b
+flag to checkout an existing branch.
+</p>
+</div>
+</li>
+<li><a id="sec-1-1-4-3" name="sec-1-1-4-3"></a>git merge &lt;branch&gt;<br  /><div class="outline-text-5" id="text-1-1-4-3">
+<p>
+Merge &lt;branch&gt; into the current branch.
+</p>
+</div>
+</li></ol>
+</div>
+<div id="outline-container-sec-1-1-5" class="outline-4">
+<h4 id="sec-1-1-5"><span class="section-number-4">1.1.5</span> Remote Repositories</h4>
+<div class="outline-text-4" id="text-1-1-5">
+</div><ol class="org-ol"><li><a id="sec-1-1-5-1" name="sec-1-1-5-1"></a>git remote add &lt;name&gt; &lt;url&gt;<br  /><div class="outline-text-5" id="text-1-1-5-1">
+<p>
+Create a new connection to a remote repo. After adding a remote,
+you can use &lt;name&gt; as a shortcut for &lt;url&gt; in other commands.
+</p>
+</div>
+</li>
+<li><a id="sec-1-1-5-2" name="sec-1-1-5-2"></a>git fetch &lt;remote&gt; &lt;branch&gt;<br  /><div class="outline-text-5" id="text-1-1-5-2">
+<p>
+Fetches a specific &lt;branch&gt;, from the repo. Leave off &lt;branch&gt; to
+fetch all remote refs.
+</p>
+</div>
+</li>
+<li><a id="sec-1-1-5-3" name="sec-1-1-5-3"></a>git pull &lt;remote&gt;<br  /><div class="outline-text-5" id="text-1-1-5-3">
+<p>
+Fetch the specified remote’s copy of current branch and immediately
+merge it into the local copy.
+</p>
+</div>
+<ol class="org-ol"><li><a id="sec-1-1-5-3-1" name="sec-1-1-5-3-1"></a>git pull &#x2013;rebase &lt;remote&gt;<br  /><div class="outline-text-6" id="text-1-1-5-3-1">
+<p>
+Fetch the remote’s copy of current branch and rebases it into the local
+copy. Uses git rebase instead of merge to integrate the branches.
+</p>
+</div>
+</li></ol>
+</li>
+<li><a id="sec-1-1-5-4" name="sec-1-1-5-4"></a>git push &lt;remote&gt; &lt;branch&gt;<br  /><div class="outline-text-5" id="text-1-1-5-4">
+<p>
+Push the branch to &lt;remote&gt;, along with necessary commits and
+objects. Creates named branch in the remote repo if it doesn’t exist.
+</p>
+</div>
+<ol class="org-ol"><li><a id="sec-1-1-5-4-1" name="sec-1-1-5-4-1"></a>git push &lt;remote&gt; &#x2013;force<br  /><div class="outline-text-6" id="text-1-1-5-4-1">
+<p>
+Forces the git push even if it results in a non-fast-forward merge. Do not use
+the &#x2013;force flag unless you’re absolutely sure you know what you’re doing.
+</p>
+</div>
+</li>
+<li><a id="sec-1-1-5-4-2" name="sec-1-1-5-4-2"></a>git push &lt;remote&gt; &#x2013;all<br  /><div class="outline-text-6" id="text-1-1-5-4-2">
+<p>
+Push all of your local branches to the specified remote.
+</p>
+</div>
+</li>
+<li><a id="sec-1-1-5-4-3" name="sec-1-1-5-4-3"></a>git push &lt;remote&gt; &#x2013;tags<br  /><div class="outline-text-6" id="text-1-1-5-4-3">
+<p>
+Tags aren’t automatically pushed when you push a branch or use the
+&#x2013;all flag. The &#x2013;tags flag sends all of your local tags to the remote repo
+</p>
+</div>
+</li></ol>
+</li></ol>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Install Git</h3>
+<div class="outline-text-3" id="text-1-2">
+</div><div id="outline-container-sec-1-2-1" class="outline-4">
+<h4 id="sec-1-2-1"><span class="section-number-4">1.2.1</span> Install Git on Linux</h4>
+<div class="outline-text-4" id="text-1-2-1">
+</div><ol class="org-ol"><li><a id="sec-1-2-1-1" name="sec-1-2-1-1"></a>Debian / Ubuntu (apt-get)<br  /><div class="outline-text-5" id="text-1-2-1-1">
+<p>
+Git packages are available via apt:
+</p>
+
+<ol class="org-ol">
+<li>From your shell, install Git using apt-get:
+<pre class="example">
+$ sudo apt-get update
+$ sudo apt-get install git
+</pre>
+</li>
+
+<li>Verify the installation was successful by typing git &#x2013;version:
+<pre class="example">
+$ git --version
+  git version 2.9.2
+</pre>
+</li>
+
+<li>Configure your Git username and email using the following commands, replacing Emma's name with your own. These details will be associated with any commits that you create:
+<pre class="example">
+$ git config --global user.name "Emma Paris"
+$ git config --global user.email "eparis@example.com"
+</pre>
+</li>
+</ol>
+</div>
+</li>
+
+<li><a id="sec-1-2-1-2" name="sec-1-2-1-2"></a><span class="todo TODO">TODO</span> Arch<br  /></li>
+<li><a id="sec-1-2-1-3" name="sec-1-2-1-3"></a>Fedora (dnf/yum)<br  /><div class="outline-text-5" id="text-1-2-1-3">
+<p>
+Git packages are available via both yum and dnf:
+</p>
+
+<ol class="org-ol">
+<li>From your shell, install Git using dnf (or yum, on older versions of Fedora):
+<pre class="example">
+$ sudo dnf install git
+</pre>
+
+<p>
+or
+</p>
+
+<pre class="example">
+$ sudo yum install git
+</pre>
+</li>
+
+<li>Verify the installation was successful by typing git &#x2013;version:
+<pre class="example">
+$git --version
+ git version 2.9.2
+</pre>
+</li>
+
+<li>Configure your Git username and email using the following commands, replacing Emma's name with your own. These details will be associated with any commits that you create:
+<pre class="example">
+$ git config --global user.name "Emma Paris"
+$ git config --global user.email "eparis@example.com"
+</pre>
+</li>
+</ol>
+</div>
+</li>
+<li><a id="sec-1-2-1-4" name="sec-1-2-1-4"></a><span class="todo TODO">TODO</span> Build Git from source on Linux<br  /></li></ol>
+</div>
+<div id="outline-container-sec-1-2-2" class="outline-4">
+<h4 id="sec-1-2-2"><span class="section-number-4">1.2.2</span> <span class="todo TODO">TODO</span> Install Git on Windows</h4>
+</div>
+<div id="outline-container-sec-1-2-3" class="outline-4">
+<h4 id="sec-1-2-3"><span class="section-number-4">1.2.3</span> <span class="todo TODO">TODO</span> Install Git on Mac</h4>
+</div>
+</div>
+<div id="outline-container-sec-1-3" class="outline-3">
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> What is Git?</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+Git is a mature, actively maintained open source project originally developed in 2005 by Linus Torvalds, the famous creator of the Linux operating system kernel. Having a distributed architecture, Git is an example of DVCS (hence Distributed Version Control System). Rather than have only one single place for the full version history of the software as is common in once-popular version control systems like CVS or Subversion (also known as SVN), in Git, every developer's working copy of the code is also a repository that can contain the full history of all changes.
+</p>
+</div>
+
+<div id="outline-container-sec-1-3-1" class="outline-4">
+<h4 id="sec-1-3-1"><span class="section-number-4">1.3.1</span> Performance</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<p>
+The raw performance characteristics of Git are very strong when compared to many alternatives. The algorithm implemented inside Git take advantage of deep knowledge about common attributes of real source code file trees, how they are usually modified over time and what the access patterns are. Git is not fooled by the names of the files when determining what the storage and version history of the file tree should be, instead, Git focuses on the file content itself. After all, source code files are frequently renamed, split, an rearranged. The object format of Git's repository files uses a combination of delta encoding (storing content differences), compression and explicitly stores directory contents and version metadata objects.
+</p>
+
+<p>
+Being distributed enables significant performance benefits as well.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-3-2" class="outline-4">
+<h4 id="sec-1-3-2"><span class="section-number-4">1.3.2</span> Security</h4>
+<div class="outline-text-4" id="text-1-3-2">
+<p>
+Git has been designed with the integrity of managed source code as a top priority. The content of the files a well as the true relationships between files and directories, versions, tags and commits, all of these object in the Git repository are secured with a cryptographically secure hashing algorithm called SHA1. This protect the code and the change history against both accidental and malicious change and ensures that the history is fully traceable.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-3-3" class="outline-4">
+<h4 id="sec-1-3-3"><span class="section-number-4">1.3.3</span> Flexibility</h4>
+<div class="outline-text-4" id="text-1-3-3">
+<p>
+One of Git's key design objectives is flexibility. Git is flexible in several respects: in support for various kinds of nonlinear development workflows, in its efficiency in both small and large projects and in it compatibility with many existing systems and protocols.
+</p>
+
+<p>
+Git has been designed to support branching and tagging as first-class citizens (unlike SVN) and operation that affect branches and tags (such as merging or reverting) are also stored as part of the change history.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-3-4" class="outline-4">
+<h4 id="sec-1-3-4"><span class="section-number-4">1.3.4</span> Version control with Git</h4>
+<div class="outline-text-4" id="text-1-3-4">
+</div><ol class="org-ol"><li><a id="sec-1-3-4-1" name="sec-1-3-4-1"></a>Git is good<br  /><div class="outline-text-5" id="text-1-3-4-1">
+<p>
+Git has the functionality, performance, security and flexibility that most teams and individual developer need.
+</p>
+</div>
+</li>
+
+<li><a id="sec-1-3-4-2" name="sec-1-3-4-2"></a>Git is de facto standard<br  /><div class="outline-text-5" id="text-1-3-4-2">
+<p>
+Git is the most broadly adopted tool of its kind. Vast numbers of developers already have Git experience and a significant proportion of college graduates may have experience with only Git. In addition to the benefits of a large talent pool, the predominance of Git also means that many third party software tools and services are already integrated with Git including IDEs.
+</p>
+</div>
+</li>
+
+<li><a id="sec-1-3-4-3" name="sec-1-3-4-3"></a>Git is a quality open source project<br  /><div class="outline-text-5" id="text-1-3-4-3">
+<p>
+Git is a very well supported open source project with over a decade of solid stewardship. Git enjoys great community support and a vast user base. Documentation is excellent and plentiful, including books, tutorial and dedicated web sites.
+</p>
+</div>
+</li>
+
+<li><a id="sec-1-3-4-4" name="sec-1-3-4-4"></a>Criticism of Git<br  /><div class="outline-text-5" id="text-1-3-4-4">
+<p>
+One common criticism of Git is that it can be difficult to learn. Some of the terminology in Git will be novel to newcomers and for users of other systems, the Git terminology may be different, for example, revert in Git has a different meaning than in SVN or CVS. Nevertheless, Git is very capable and provides a lot of power to its users.
+</p>
+</div>
+</li></ol>
+</div>
+</div>
+<div id="outline-container-sec-1-4" class="outline-3">
+<h3 id="sec-1-4"><span class="section-number-3">1.4</span> Concepts and Benefits</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+Category of software tools that help a software team manage changes of source code over time. Keeps track of every modification to the code in a special kind of database. Version control protects source code from both catastrophe and the casual degradation of human error and unintended consequences.
+</p>
+<ul class="org-ul">
+<li>A complete long-term change history of every file. This means every change made by many individuals over the years. Changes include the creation and deletion of files as well as edits to their contents.
+</li>
+<li>Branching and merging. Having team members work concurrently is a no-brainer, but even individuals working on their own can benefit from the ability to work on independent streams of changes. Creating a "branch" in VC tools keeps multiple streams of work independent from each other while also providing the facility to merge that work back together, enabling developers to verify that the changes on each branch do not conflict.
+</li>
+<li>Traceability. Being able to trace each change made to the software and connect it to project management an bug tracking software such as Jira, and being able to annotate each change with a message describing the purpose and intent of the change can help not only with root cause analysis and other forensics. Having the annotated history of the code at your fingertips when you are reading the code, trying to understand what it is doing and why it is so designed can enable developers to make correct and harmonious changes that are in accord with the intended long-term design of the system. This can be especially important for working effectively with legacy code and is crucial in enabling developers to estimate future work with an accuracy.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-5" class="outline-3">
+<h3 id="sec-1-5"><span class="section-number-3">1.5</span> Git for developers</h3>
+<div class="outline-text-3" id="text-1-5">
+</div><div id="outline-container-sec-1-5-1" class="outline-4">
+<h4 id="sec-1-5-1"><span class="section-number-4">1.5.1</span> Feature Branch Workflow</h4>
+<div class="outline-text-4" id="text-1-5-1">
+<p>
+One of the biggest advantages of Git is its branching capabilities. Unlike centralized version control systems, Git branches are cheap and easy to merge. This facilitates the feature branch workflow popular with many Git users.
+</p>
+
+
+<div class="figure">
+<p><img src="./img/2.png" alt="2.png" />
+</p>
+</div>
+
+<p>
+Feature branches provide an isolated environment for every change to your codebase. When a developer wants to start working on something—no matter how big or small—they create a new branch. This ensures that the master branch always contains production-quality code.
+</p>
+
+<p>
+Using feature branches is not only more reliable than directly editing production code, but it also provides organizational benefits. They let you represent development work at the same granularity as the your agile backlog. For example, you might implement a policy where each Jira ticket is addressed in its own feature branch.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-5-2" class="outline-4">
+<h4 id="sec-1-5-2"><span class="section-number-4">1.5.2</span> Distributed Development</h4>
+<div class="outline-text-4" id="text-1-5-2">
+<p>
+In SVN, each developer gets a working copy that points back to a single central repository. Git, however, is  distributed version control system. Instead of a working copy, each developer gets their own local repository complete with a full history of commits.
+</p>
+
+
+<div class="figure">
+<p><img src="./img/3.png" alt="3.png" />
+</p>
+</div>
+
+<p>
+Having a full local history makes Git fast, since it means you don’t need a network connection to create commits, inspect previous versions of a file, or perform diffs between commits.
+</p>
+
+<p>
+Distributed development also makes it easier to scale your engineering team. If someone breaks the production branch in SVN, other developers can’t check in their changes until it’s fixed. With Git this kind of blocking doesn’t exist. Everybody can continue going about their business in their own local repositories.
+</p>
+
+<p>
+And, similar to feature branches, distributed development creates a more reliable environment. Even if developer obliterates their own repository, they can simply clone someone else’s and start anew.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-5-3" class="outline-4">
+<h4 id="sec-1-5-3"><span class="section-number-4">1.5.3</span> Pull Requests</h4>
+<div class="outline-text-4" id="text-1-5-3">
+<p>
+Many source code management tools such as GitHub or Bitbucket enhance core Git functionality with pull requests. A pull request is a way to ask another developer to merge one of your branches into their repository. This not only makes it easier for project leads to keep track of changes, but also lets developers initiate discussions around their work before integrating it with the rest of the codebase.
+</p>
+
+
+<div class="figure">
+<p><img src="./img/4.png" alt="4.png" />
+</p>
+</div>
+
+<p>
+Since they're essentially a comment thread attached to a feature branch, pull requests are extremely versatile. When a developer gets stuck with a hard problem, they can open a pull request to ask for help from the rest of the team. Alternatively, junior developers can be confident that they aren't destroying the entire project by treating pull requests as a formal code review.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Java&#xa0;&#xa0;&#xa0;<span class="tag"><span class="java">java</span></span></h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> Spring&#xa0;&#xa0;&#xa0;<span class="tag"><span class="spring">spring</span></span></h3>
+<div class="outline-text-3" id="text-2-1">
+</div><div id="outline-container-sec-2-1-1" class="outline-4">
+<h4 id="sec-2-1-1"><span class="section-number-4">2.1.1</span> Dependency Injection&#xa0;&#xa0;&#xa0;<span class="tag"><span class="di">di</span></span></h4>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2018-10-24 sre 14:29</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

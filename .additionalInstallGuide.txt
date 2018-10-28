@@ -1,0 +1,2 @@
+- LaTeX needed for org-mode pdf export.
+- msys2 needed in order to install pdf-tools (It's a biiig one - https://github.com/politza/pdf-tools#compilation-and-installation-on-windows; 4 and 5 skipped, they didn't work for me; add MELPA to init.d).

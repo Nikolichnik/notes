@@ -1,0 +1,394 @@
+% Created 2018-10-24 sre 15:01
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\tolerance=1000
+\date{\today}
+\title{notes}
+\hypersetup{
+  pdfkeywords={},
+  pdfsubject={},
+  pdfcreator={Emacs 25.3.1 (Org mode 8.2.10)}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{Git\hfill{}\textsc{git}}
+\label{sec-1}
+\subsection{Cheatsheet}
+\label{sec-1-1}
+\subsubsection{Basics}
+\label{sec-1-1-1}
+\begin{enumerate}
+\item git init <directory>
+\label{sec-1-1-1-1}
+Create empty Git repo in specified directory. Run with no arguments
+to initialize the current directory as a git repository.
+\item git clone <repo>
+\label{sec-1-1-1-2}
+Clone repo located at <repo> onto local machine. Original repo can be
+located on the local filesystem or on a remote machine via HTTP or SSH.
+\item git config user.name <name>
+\label{sec-1-1-1-3}
+Define author name to be used for all commits in current repo. Devs
+commonly use --global flag to set config options for current user.
+\begin{enumerate}
+\item git config --global user.name <name>
+\label{sec-1-1-1-3-1}
+Define the author name to be used for all commits by the current user.
+\item git config --global user.email <email>
+\label{sec-1-1-1-3-2}
+Define the author email to be used for all commits by the current user.
+\item git config --global alias. <alias-name> <git-command>
+\label{sec-1-1-1-3-3}
+Create shortcut for a Git command. E.g. alias.glog log --graph
+--oneline will set git glog equivalent to git log --graph --oneline.
+\item git config --system core.editor <editor>
+\label{sec-1-1-1-3-4}
+Set text editor used by commands for all users on the machine. <editor>
+arg should be the command that launches the desired editor (e.g., vi).
+\item git config --global --edit
+\label{sec-1-1-1-3-5}
+Open the global configuration file in a text editor for manual editing.
+\end{enumerate}
+\item git add <directory>
+\label{sec-1-1-1-4}
+Stage all changes in <directory> for the next commit.
+Replace <directory> with a <file> to change a specific file. To stage all changes for the next commit, git add . is appropriate command.
+\item git commit -m "<message>"
+\label{sec-1-1-1-5}
+Commit the staged snapshot, but instead of launching a text editor,
+use <message> as the commit message.
+\begin{enumerate}
+\item git commit --amend
+\label{sec-1-1-1-5-1}
+Replace the last commit with the staged changes and last commit
+combined. Use with nothing staged to edit the last commit’s message.
+\end{enumerate}
+\item git status
+\label{sec-1-1-1-6}
+List which files are staged, unstaged, and untracked.
+\item git log
+\label{sec-1-1-1-7}
+Display the entire commit history using the default format.
+\begin{enumerate}
+\item git log -<limit>
+\label{sec-1-1-1-7-1}
+Limit number of commits by <limit>. E.g. git log -5 will limit to 5
+commits.
+\item git log --oneline
+\label{sec-1-1-1-7-2}
+Condense each commit to a single line.
+\item git log -p
+\label{sec-1-1-1-7-3}
+Display the full diff of each commit.
+\item git log --stat
+\label{sec-1-1-1-7-4}
+Include which files were altered and the relative number of lines
+that were added or deleted from each of them.
+\item git log --author="<pattern>"
+\label{sec-1-1-1-7-5}
+Search for commits by a particular author.
+\item git log --grep="<pattern>"
+\label{sec-1-1-1-7-6}
+Search for commits with a commit message that matches <pattern>.
+\item git log <since>..<until>
+\label{sec-1-1-1-7-7}
+Show commits that occur between <since> and <until>. Args can be a
+commit ID, branch name, HEAD, or any other kind of revision reference.
+\item git log -- <file>
+\label{sec-1-1-1-7-8}
+Only display commits that have the specified file.
+\item git log --graph --decorate
+\label{sec-1-1-1-7-9}
+--graph flag draws a text based graph of commits on left side of commit
+msgs. --decorate adds names of branches or tags of commits shown.
+\end{enumerate}
+\item git diff
+\label{sec-1-1-1-8}
+Show unstaged changes between your index and working directory.
+\begin{enumerate}
+\item git diff HEAD
+\label{sec-1-1-1-8-1}
+Show difference between working directory and last commit.
+\item git diff --cached
+\label{sec-1-1-1-8-2}
+Show difference between staged changes and last commit.
+\end{enumerate}
+\end{enumerate}
+\subsubsection{Undoing Changes}
+\label{sec-1-1-2}
+\begin{enumerate}
+\item git revert <commit>
+\label{sec-1-1-2-1}
+Create new commit that undoes all of the changes made in
+<commit>, then apply it to the current branch.
+\item git reset
+\label{sec-1-1-2-2}
+Reset staging area to match most recent commit, but leave the
+working directory unchanged.
+\begin{enumerate}
+\item git reset <file>
+\label{sec-1-1-2-2-1}
+Remove <file> from the staging area, but leave the working directory
+unchanged. This unstages a file without overwriting any changes.
+\item git reset --hard
+\label{sec-1-1-2-2-2}
+Reset staging area and working directory to match most recent
+commit and overwrites all changes in the working directory.
+\item git reset <commit>
+\label{sec-1-1-2-2-3}
+Move the current branch tip backward to <commit>, reset the
+staging area to match, but leave the working directory alone.
+\item git reset --hard <commit>
+\label{sec-1-1-2-2-4}
+Move the current branch tip backward to <commit>, reset the
+staging area to match, resets both the staging area \& working directory to
+match. Deletes uncommitted changes, and all commits after <commit>.
+\end{enumerate}
+\item git clean -n
+\label{sec-1-1-2-3}
+Shows which files would be removed from working directory. Use
+the -f flag in place of the -n flag to execute the clean.
+\end{enumerate}
+\subsubsection{Rewriting Git History}
+\label{sec-1-1-3}
+\begin{enumerate}
+\item git commit --amend
+\label{sec-1-1-3-1}
+Replace the last commit with the staged changes and last commit
+combined. Use with nothing staged to edit the last commit’s message.
+\item git rebase <base>
+\label{sec-1-1-3-2}
+Rebase the current branch onto <base>. <base> can be a commit ID,
+a branch name, a tag, or a relative reference to HEAD.
+\begin{enumerate}
+\item git rebase -i <base>
+\label{sec-1-1-3-2-1}
+Interactively rebase current branch onto <base>. Launches editor to enter
+commands for how each commit will be transferred to the new base.
+\end{enumerate}
+\item git reflog
+\label{sec-1-1-3-3}
+Show a log of changes to the local repository’s HEAD. Add
+--relative-date flag to show date info or --all to show all refs
+\end{enumerate}
+\subsubsection{Git Branches}
+\label{sec-1-1-4}
+\begin{enumerate}
+\item git branch
+\label{sec-1-1-4-1}
+List all of the branches in your repo. Add a <branch> argument to
+create a new branch with the name <branch>.
+\item git checkout -b <branch>
+\label{sec-1-1-4-2}
+Create and check out a new branch named <branch>. Drop the -b
+flag to checkout an existing branch.
+\item git merge <branch>
+\label{sec-1-1-4-3}
+Merge <branch> into the current branch.
+\end{enumerate}
+\subsubsection{Remote Repositories}
+\label{sec-1-1-5}
+\begin{enumerate}
+\item git remote add <name> <url>
+\label{sec-1-1-5-1}
+Create a new connection to a remote repo. After adding a remote,
+you can use <name> as a shortcut for <url> in other commands.
+\item git fetch <remote> <branch>
+\label{sec-1-1-5-2}
+Fetches a specific <branch>, from the repo. Leave off <branch> to
+fetch all remote refs.
+\item git pull <remote>
+\label{sec-1-1-5-3}
+Fetch the specified remote’s copy of current branch and immediately
+merge it into the local copy.
+\begin{enumerate}
+\item git pull --rebase <remote>
+\label{sec-1-1-5-3-1}
+Fetch the remote’s copy of current branch and rebases it into the local
+copy. Uses git rebase instead of merge to integrate the branches.
+\end{enumerate}
+\item git push <remote> <branch>
+\label{sec-1-1-5-4}
+Push the branch to <remote>, along with necessary commits and
+objects. Creates named branch in the remote repo if it doesn’t exist.
+\begin{enumerate}
+\item git push <remote> --force
+\label{sec-1-1-5-4-1}
+Forces the git push even if it results in a non-fast-forward merge. Do not use
+the --force flag unless you’re absolutely sure you know what you’re doing.
+\item git push <remote> --all
+\label{sec-1-1-5-4-2}
+Push all of your local branches to the specified remote.
+\item git push <remote> --tags
+\label{sec-1-1-5-4-3}
+Tags aren’t automatically pushed when you push a branch or use the
+--all flag. The --tags flag sends all of your local tags to the remote repo
+\end{enumerate}
+\end{enumerate}
+\subsection{Install Git}
+\label{sec-1-2}
+\subsubsection{Install Git on Linux}
+\label{sec-1-2-1}
+\begin{enumerate}
+\item Debian / Ubuntu (apt-get)
+\label{sec-1-2-1-1}
+Git packages are available via apt:
+
+\begin{enumerate}
+\item From your shell, install Git using apt-get:
+\begin{verbatim}
+$ sudo apt-get update
+$ sudo apt-get install git
+\end{verbatim}
+
+\item Verify the installation was successful by typing git --version:
+\begin{verbatim}
+$ git --version
+  git version 2.9.2
+\end{verbatim}
+
+\item Configure your Git username and email using the following commands, replacing Emma's name with your own. These details will be associated with any commits that you create:
+\begin{verbatim}
+$ git config --global user.name "Emma Paris"
+$ git config --global user.email "eparis@example.com"
+\end{verbatim}
+\end{enumerate}
+
+\item {\bfseries\sffamily TODO} Arch
+\label{sec-1-2-1-2}
+\item Fedora (dnf/yum)
+\label{sec-1-2-1-3}
+Git packages are available via both yum and dnf:
+
+\begin{enumerate}
+\item From your shell, install Git using dnf (or yum, on older versions of Fedora):
+\begin{verbatim}
+$ sudo dnf install git
+\end{verbatim}
+
+or
+
+\begin{verbatim}
+$ sudo yum install git
+\end{verbatim}
+
+\item Verify the installation was successful by typing git --version:
+\begin{verbatim}
+$git --version
+ git version 2.9.2
+\end{verbatim}
+
+\item Configure your Git username and email using the following commands, replacing Emma's name with your own. These details will be associated with any commits that you create:
+\begin{verbatim}
+$ git config --global user.name "Emma Paris"
+$ git config --global user.email "eparis@example.com"
+\end{verbatim}
+\end{enumerate}
+\item {\bfseries\sffamily TODO} Build Git from source on Linux
+\label{sec-1-2-1-4}
+\end{enumerate}
+\subsubsection{{\bfseries\sffamily TODO} Install Git on Windows}
+\label{sec-1-2-2}
+\subsubsection{{\bfseries\sffamily TODO} Install Git on Mac}
+\label{sec-1-2-3}
+\subsection{What is Git?}
+\label{sec-1-3}
+Git is a mature, actively maintained open source project originally developed in 2005 by Linus Torvalds, the famous creator of the Linux operating system kernel. Having a distributed architecture, Git is an example of DVCS (hence Distributed Version Control System). Rather than have only one single place for the full version history of the software as is common in once-popular version control systems like CVS or Subversion (also known as SVN), in Git, every developer's working copy of the code is also a repository that can contain the full history of all changes.
+
+\subsubsection{Performance}
+\label{sec-1-3-1}
+The raw performance characteristics of Git are very strong when compared to many alternatives. The algorithm implemented inside Git take advantage of deep knowledge about common attributes of real source code file trees, how they are usually modified over time and what the access patterns are. Git is not fooled by the names of the files when determining what the storage and version history of the file tree should be, instead, Git focuses on the file content itself. After all, source code files are frequently renamed, split, an rearranged. The object format of Git's repository files uses a combination of delta encoding (storing content differences), compression and explicitly stores directory contents and version metadata objects.
+
+Being distributed enables significant performance benefits as well.
+
+\subsubsection{Security}
+\label{sec-1-3-2}
+Git has been designed with the integrity of managed source code as a top priority. The content of the files a well as the true relationships between files and directories, versions, tags and commits, all of these object in the Git repository are secured with a cryptographically secure hashing algorithm called SHA1. This protect the code and the change history against both accidental and malicious change and ensures that the history is fully traceable.
+
+\subsubsection{Flexibility}
+\label{sec-1-3-3}
+One of Git's key design objectives is flexibility. Git is flexible in several respects: in support for various kinds of nonlinear development workflows, in its efficiency in both small and large projects and in it compatibility with many existing systems and protocols.
+
+Git has been designed to support branching and tagging as first-class citizens (unlike SVN) and operation that affect branches and tags (such as merging or reverting) are also stored as part of the change history.
+
+\subsubsection{Version control with Git}
+\label{sec-1-3-4}
+\begin{enumerate}
+\item Git is good
+\label{sec-1-3-4-1}
+Git has the functionality, performance, security and flexibility that most teams and individual developer need.
+
+\item Git is de facto standard
+\label{sec-1-3-4-2}
+Git is the most broadly adopted tool of its kind. Vast numbers of developers already have Git experience and a significant proportion of college graduates may have experience with only Git. In addition to the benefits of a large talent pool, the predominance of Git also means that many third party software tools and services are already integrated with Git including IDEs.
+
+\item Git is a quality open source project
+\label{sec-1-3-4-3}
+Git is a very well supported open source project with over a decade of solid stewardship. Git enjoys great community support and a vast user base. Documentation is excellent and plentiful, including books, tutorial and dedicated web sites.
+
+\item Criticism of Git
+\label{sec-1-3-4-4}
+One common criticism of Git is that it can be difficult to learn. Some of the terminology in Git will be novel to newcomers and for users of other systems, the Git terminology may be different, for example, revert in Git has a different meaning than in SVN or CVS. Nevertheless, Git is very capable and provides a lot of power to its users.
+\end{enumerate}
+\subsection{Concepts and Benefits}
+\label{sec-1-4}
+Category of software tools that help a software team manage changes of source code over time. Keeps track of every modification to the code in a special kind of database. Version control protects source code from both catastrophe and the casual degradation of human error and unintended consequences.
+\begin{itemize}
+\item A complete long-term change history of every file. This means every change made by many individuals over the years. Changes include the creation and deletion of files as well as edits to their contents.
+\item Branching and merging. Having team members work concurrently is a no-brainer, but even individuals working on their own can benefit from the ability to work on independent streams of changes. Creating a "branch" in VC tools keeps multiple streams of work independent from each other while also providing the facility to merge that work back together, enabling developers to verify that the changes on each branch do not conflict.
+\item Traceability. Being able to trace each change made to the software and connect it to project management an bug tracking software such as Jira, and being able to annotate each change with a message describing the purpose and intent of the change can help not only with root cause analysis and other forensics. Having the annotated history of the code at your fingertips when you are reading the code, trying to understand what it is doing and why it is so designed can enable developers to make correct and harmonious changes that are in accord with the intended long-term design of the system. This can be especially important for working effectively with legacy code and is crucial in enabling developers to estimate future work with an accuracy.
+\end{itemize}
+\subsection{Git for developers}
+\label{sec-1-5}
+\subsubsection{Feature Branch Workflow}
+\label{sec-1-5-1}
+One of the biggest advantages of Git is its branching capabilities. Unlike centralized version control systems, Git branches are cheap and easy to merge. This facilitates the feature branch workflow popular with many Git users.
+
+\includegraphics[width=.9\linewidth]{./img/2.png}
+
+Feature branches provide an isolated environment for every change to your codebase. When a developer wants to start working on something—no matter how big or small—they create a new branch. This ensures that the master branch always contains production-quality code.
+
+Using feature branches is not only more reliable than directly editing production code, but it also provides organizational benefits. They let you represent development work at the same granularity as the your agile backlog. For example, you might implement a policy where each Jira ticket is addressed in its own feature branch.
+
+\subsubsection{Distributed Development}
+\label{sec-1-5-2}
+In SVN, each developer gets a working copy that points back to a single central repository. Git, however, is  distributed version control system. Instead of a working copy, each developer gets their own local repository complete with a full history of commits.
+
+\includegraphics[width=.9\linewidth]{./img/3.png}
+
+Having a full local history makes Git fast, since it means you don’t need a network connection to create commits, inspect previous versions of a file, or perform diffs between commits.
+
+Distributed development also makes it easier to scale your engineering team. If someone breaks the production branch in SVN, other developers can’t check in their changes until it’s fixed. With Git this kind of blocking doesn’t exist. Everybody can continue going about their business in their own local repositories.
+
+And, similar to feature branches, distributed development creates a more reliable environment. Even if developer obliterates their own repository, they can simply clone someone else’s and start anew.
+\subsubsection{Pull Requests}
+\label{sec-1-5-3}
+Many source code management tools such as GitHub or Bitbucket enhance core Git functionality with pull requests. A pull request is a way to ask another developer to merge one of your branches into their repository. This not only makes it easier for project leads to keep track of changes, but also lets developers initiate discussions around their work before integrating it with the rest of the codebase.
+
+\includegraphics[width=.9\linewidth]{./img/4.png}
+
+Since they're essentially a comment thread attached to a feature branch, pull requests are extremely versatile. When a developer gets stuck with a hard problem, they can open a pull request to ask for help from the rest of the team. Alternatively, junior developers can be confident that they aren't destroying the entire project by treating pull requests as a formal code review.
+\section{Java\hfill{}\textsc{java}}
+\label{sec-2}
+\subsection{Spring\hfill{}\textsc{spring}}
+\label{sec-2-1}
+\subsubsection{Dependency Injection\hfill{}\textsc{di}}
+\label{sec-2-1-1}
+% Emacs 25.3.1 (Org mode 8.2.10)
+\end{document}
