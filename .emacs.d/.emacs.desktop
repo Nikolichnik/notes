@@ -2,32 +2,32 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Sat Oct 27 15:49:09 2018
+;; Created Sat Oct 27 18:53:33 2018
 ;; Desktop file format version 208
 ;; Emacs version 25.3.1
 
 ;; Global section:
-(setq desktop-saved-frameset [frameset 1 (23508 27861 518859 700000) (desktop . "208") "Nikolichnik@blueboxxx230t" nil nil ((((font-backend uniscribe gdi) (font . "-outline-Century Gothic-normal-normal-normal-sans-13-*-*-*-p-*-iso8859-1") (border-width . 2) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (horizontal-scroll-bars) (foreground-color . "#DCDCCC") (background-color . "#3F3F3F") (mouse-color . "black") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 8) (right-fringe . 8) (alpha) (menu-bar-lines . 1) (tool-bar-lines . 0) (height . 40) (title) (icon-type) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 0) (scroll-bar-height . 0) (fullscreen . maximized) (display-type . color) (background-mode . dark) (cursor-color . "#FFFFEF") (environment) (powerline-cache) (frameset--id . "D40C-2EB9-8487-9DF7") (frameset--mini t . t) (modeline . t) (minibuffer . t) (unsplittable) (icon-name) (display . "w32") (explicit-name) (tool-bar-position . top) (visibility . t) (width . 225) (left + -8) (top + -8)) ((min-height . 8) (min-width . 30) (min-height-ignore . 6) (min-width-ignore . 15) (min-height-safe . 2) (min-width-safe . 6) (min-pixel-height . 136) (min-pixel-width . 180) (min-pixel-height-ignore . 102) (min-pixel-width-ignore . 90) (min-pixel-height-safe . 34) (min-pixel-width-safe . 36)) vc (pixel-width . 1366) (pixel-height . 678) (total-width . 228) (total-height . 40) (normal-height . 1.0) (normal-width . 1.0) (combination-limit) (hc (pixel-width . 1366) (pixel-height . 576) (total-width . 228) (total-height . 34) (normal-height . 0.8593040847201213) (normal-width . 1.0) (combination-limit) (leaf (pixel-width . 246) (pixel-height . 576) (total-width . 41) (total-height . 34) (normal-height . 1.0) (normal-width . 0.18035190615835778) (buffer "notes.org" (selected) (hscroll . 0) (fringes 8 8 nil) (margins nil) (scroll-bars nil 0 t nil 0 t) (vscroll . 0) (dedicated) (point . 17620) (start . 1))) (leaf (pixel-width . 716) (pixel-height . 576) (total-width . 119) (total-height . 34) (normal-height . 1.0) (normal-width . 0.5297072654392755) (buffer "effectivejava2ndedition.pdf" (selected) (hscroll . 0) (fringes 8 8 nil) (margins nil) (scroll-bars nil 0 t nil 0 t) (vscroll . 5) (dedicated) (point . 1) (start . 1))) (leaf (last . t) (pixel-width . 404) (pixel-height . 576) (total-width . 68) (total-height . 34) (normal-height . 1.0) (normal-width . 0.2899408284023669) (buffer "*eww*" (selected . t) (hscroll . 0) (fringes 8 8 nil) (margins nil) (scroll-bars nil 0 t nil 0 t) (vscroll . 0) (dedicated) (point . 1) (start . 1)))) (hc (last . t) (pixel-width . 1366) (pixel-height . 102) (total-width . 228) (total-height . 6) (normal-height . 0.14069591527987896) (normal-width . 1.0) (combination-limit) (leaf (pixel-width . 429) (pixel-height . 102) (total-width . 72) (total-height . 6) (normal-height . 1.0) (normal-width . 0.31451612903225806) (buffer "git" (selected) (hscroll . 0) (fringes 8 8 nil) (margins nil) (scroll-bars nil 0 t nil 0 t) (vscroll . 0) (dedicated) (point . 142) (start . 121))) (leaf (pixel-width . 533) (pixel-height . 102) (total-width . 89) (total-height . 6) (normal-height . 1.0) (normal-width . 0.39133627019089573) (buffer "yarn" (selected) (hscroll . 0) (fringes 8 8 nil) (margins nil) (scroll-bars nil 0 t nil 0 t) (vscroll . 0) (dedicated) (point . 119) (start . 98))) (leaf (last . t) (pixel-width . 404) (pixel-height . 102) (total-width . 67) (total-height . 6) (normal-height . 1.0) (normal-width . 0.2941476007768462) (buffer "maven" (selected) (hscroll . 0) (fringes 8 8 nil) (margins nil) (scroll-bars nil 0 t nil 0 t) (vscroll . 0) (dedicated) (point . 142) (start . 121))))))])
+(setq desktop-saved-frameset [frameset 1 (23508 38925 995181 0) (desktop . "208") "Nikolichnik@BLUEBOXXX230T" nil nil ((((font-backend uniscribe gdi) (font . "-outline-Century Gothic-normal-normal-normal-sans-13-*-*-*-p-*-iso8859-1") (border-width . 2) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (horizontal-scroll-bars) (foreground-color . "#DCDCCC") (background-color . "#3F3F3F") (mouse-color . "black") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 8) (right-fringe . 8) (alpha) (menu-bar-lines . 1) (tool-bar-lines . 0) (height . 40) (title) (icon-type) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 0) (scroll-bar-height . 0) (fullscreen . maximized) (display-type . color) (background-mode . dark) (cursor-color . "#FFFFEF") (environment) (powerline-cache) (frameset--id . "D40C-2EB9-8487-9DF7") (frameset--mini t . t) (modeline . t) (minibuffer . t) (unsplittable) (icon-name) (display . "w32") (explicit-name) (tool-bar-position . top) (visibility . t) (width . 225) (left + -8) (top + -8)) ((min-height . 4) (min-width . 10) (min-height-ignore . 3) (min-width-ignore . 5) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 68) (min-pixel-width . 60) (min-pixel-height-ignore . 51) (min-pixel-width-ignore . 30) (min-pixel-height-safe . 17) (min-pixel-width-safe . 12)) leaf (pixel-width . 1366) (pixel-height . 678) (total-width . 228) (total-height . 40) (normal-height . 1.0) (normal-width . 1.0) (buffer "work" (selected . t) (hscroll . 0) (fringes 8 8 nil) (margins nil) (scroll-bars nil 0 t nil 0 t) (vscroll . 0) (dedicated) (point . 502) (start . 1))))])
 (setq desktop-missing-file-warning nil)
 (setq tags-file-name nil)
 (setq tags-table-list nil)
 (setq search-ring '("javascrip" "javascript" "ben" "define"))
 (setq regexp-search-ring nil)
 (setq register-alist nil)
-(setq file-name-history '("~/.emacs.d/" "~/Documents/work/notes/" "~/Documents/work/notes/notes.org" "~/Documents/work/notes/JavaContainers.pdf" "~/Documents/work/notes/notes.org" "~/Documents/work/notes/Java Containers.pdf" "~/Documents/work/notes/notes.org" "~/Documents/work/notes/pdf" "~/Documents/work/notes/pdf/" "~/Documents/work/notes/notes.org" "~/Documents/work/cheat-sheet.org" "~/Documents/work/notes/notes.org" "~/Documents/work/notes/notes.o" "~/Documents/work/notes/notes.org"))
+(setq file-name-history '("~/.emacs.d/" "~/Documents/work" "~/Documents/" "~/Documents/work/" "~/.emacs.d/" "~/Documents/work/notes/" "~/Documents/work/notes/notes.org" "~/Documents/work/notes/JavaContainers.pdf" "~/Documents/work/notes/notes.org" "~/Documents/work/notes/Java Containers.pdf" "~/Documents/work/notes/notes.org" "~/Documents/work/notes/pdf" "~/Documents/work/notes/pdf/" "~/Documents/work/notes/notes.org" "~/Documents/work/cheat-sheet.org" "~/Documents/work/notes/notes.org" "~/Documents/work/notes/notes.o" "~/Documents/work/notes/notes.org"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 208
   nil
-  "*eww*"
-  'eww-mode
-  '(beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode undo-tree-mode editorconfig-mode)
-  1
-  '(1 nil)
+  "work"
+  'dired-mode
+  '(beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode editorconfig-mode diff-hl-dired-mode)
+  502
+  '(nil nil)
   t
-  '(:history ((:point 362 :url "https://docs.spring.io/spring/docs/4.0.0.RELEASE/spring-framework-reference/htmlsingle/" :title "Spring Framework Reference Documentation") (:title "Spring Framework - Wikipedia" :url "https://en.wikipedia.org/wiki/Spring_Framework" :point 1) (:title "Spring - Wikipedia" :url "https://en.wikipedia.org/wiki/Spring" :point 3932) (:title "Wikipedia" :url "https://www.wikipedia.org/" :point 305)))
-  '((buffer-file-coding-system . utf-8-dos) (truncate-lines . t) (eww-history-position . 0))
-  '((mark-ring (1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1))))
+  '("c:/Users/Nikolichnik/Documents/work/")
+  nil
+  '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "c:/Users/Nikolichnik/Documents/work/notes/pdf/EffectiveJava2ndEdition.pdf"
@@ -46,12 +46,48 @@
   "notes.org"
   'org-mode
   '(abbrev-mode visual-line-mode beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode whitespace-mode undo-tree-mode diff-hl-mode editorconfig-mode org-indent-mode)
-  17620
+  17004
   '(16662 nil)
   nil
   nil
   '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix) (truncate-lines))
-  '((mark-ring (16757 17100 18850 17806 18918 18918 17032 16938 17032))))
+  '((mark-ring (16757 17100 18850 17806 18918 18918 17032 16938 17032 5485 18 17403 4 5683 17019 17081))))
+
+(desktop-create-buffer 208
+  nil
+  "*eww*"
+  'eww-mode
+  '(beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode undo-tree-mode editorconfig-mode)
+  1
+  '(1 nil)
+  t
+  '(:history ((:title "Spring Framework Reference Documentation" :url "https://docs.spring.io/spring/docs/4.0.0.RELEASE/spring-framework-reference/htmlsingle/" :point 1) (:point 1 :url "https://en.wikipedia.org/wiki/Spring_Framework" :title "Spring Framework - Wikipedia") (:point 3932 :url "https://en.wikipedia.org/wiki/Spring" :title "Spring - Wikipedia") (:point 305 :url "https://www.wikipedia.org/" :title "Wikipedia")))
+  '((buffer-file-coding-system . utf-8-dos) (truncate-lines . t) (eww-history-position . 0))
+  '((mark-ring (1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1))))
+
+(desktop-create-buffer 208
+  "c:/Users/Nikolichnik/Documents/work/.gitignore"
+  ".gitignore"
+  'gitignore-mode
+  '(beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode undo-tree-mode diff-hl-mode editorconfig-mode)
+  14
+  '(nil nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . iso-latin-2-dos))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  "Documents"
+  'dired-mode
+  '(beacon-mode which-key-mode prelude-mode global-auto-revert-mode super-save-mode volatile-highlights-mode projectile-mode anzu-mode editorconfig-mode diff-hl-dired-mode)
+  421
+  '(nil nil)
+  t
+  '("c:/Users/Nikolichnik/Documents/")
+  nil
+  '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "c:/Users/Nikolichnik/Documents/work/notes/pdf/JavaContainers.pdf"

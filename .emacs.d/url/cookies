@@ -2,20 +2,23 @@
 ;; Automatically generated file!!! DO NOT EDIT!!!
 
 (setq url-cookie-storage
- 'nil)
+ '((".spring.io"
+  [url-cookie "__cfduid" "dfb290a90a83159518a5636547ac89abf1540646889" "27 Oct 19 13:28:09 [GMT]" "/" ".spring.io" nil]
+  [url-cookie "HttpOnly" nil "27 Oct 19 13:28:09 [GMT]" "/" ".spring.io" nil]))
+)
 (setq url-cookie-secure-storage
- '((".wikipedia.org"
-  [url-cookie "WMF-Last-Access-Global" "25-Oct-2018" "Mon, 26 Nov 2018 12:00:00 GMT" "/" ".wikipedia.org" t]
-  [url-cookie "HttpOnly" nil "Mon, 26 Nov 2018 12:00:00 GMT" "/" ".wikipedia.org" t])
- ("en.wikipedia.org"
-  [url-cookie "WMF-Last-Access" "25-Oct-2018" "Mon, 26 Nov 2018 12:00:00 GMT" "/" "en.wikipedia.org" t]
-  [url-cookie "HttpOnly" nil "Mon, 26 Nov 2018 12:00:00 GMT" "/" "en.wikipedia.org" t])
+ '(("www.wikipedia.org"
+  [url-cookie "HttpOnly" nil "Mon, 26 Nov 2018 12:00:00 GMT" "/" "www.wikipedia.org" t]
+  [url-cookie "WMF-Last-Access" "25-Oct-2018" "Mon, 26 Nov 2018 12:00:00 GMT" "/" "www.wikipedia.org" t])
  ("wikipedia.org"
-  [url-cookie "WMF-Last-Access" "25-Oct-2018" "Mon, 26 Nov 2018 12:00:00 GMT" "/" "wikipedia.org" t]
-  [url-cookie "HttpOnly" nil "Mon, 26 Nov 2018 12:00:00 GMT" "/" "wikipedia.org" t])
- ("www.wikipedia.org"
-  [url-cookie "WMF-Last-Access" "25-Oct-2018" "Mon, 26 Nov 2018 12:00:00 GMT" "/" "www.wikipedia.org" t]
-  [url-cookie "HttpOnly" nil "Mon, 26 Nov 2018 12:00:00 GMT" "/" "www.wikipedia.org" t]))
+  [url-cookie "HttpOnly" nil "Mon, 26 Nov 2018 12:00:00 GMT" "/" "wikipedia.org" t]
+  [url-cookie "WMF-Last-Access" "25-Oct-2018" "Mon, 26 Nov 2018 12:00:00 GMT" "/" "wikipedia.org" t])
+ ("en.wikipedia.org"
+  [url-cookie "HttpOnly" nil "Wed, 28 Nov 2018 12:00:00 GMT" "/" "en.wikipedia.org" t]
+  [url-cookie "WMF-Last-Access" "27-Oct-2018" "Wed, 28 Nov 2018 12:00:00 GMT" "/" "en.wikipedia.org" t])
+ (".wikipedia.org"
+  [url-cookie "HttpOnly" nil "Wed, 28 Nov 2018 12:00:00 GMT" "/" ".wikipedia.org" t]
+  [url-cookie "WMF-Last-Access-Global" "27-Oct-2018" "Wed, 28 Nov 2018 12:00:00 GMT" "/" ".wikipedia.org" t]))
 )
 
 ;; Local Variables:

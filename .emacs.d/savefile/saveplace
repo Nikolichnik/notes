@@ -1,9 +1,14 @@
 ;;; -*- coding: utf-8 -*-
 (("c:/Users/Nikolichnik/Documents/work/notes/"
-  (dired-filename . "c:/Users/Nikolichnik/Documents/work/notes/notes.org"))
- ("c:/Users/Nikolichnik/Documents/work/notes/notes.org" . 18908)
- ("c:/Users/Nikolichnik/.emacs.d/savefile/recentf" . 1597)
- ("c:/Users/Nikolichnik/.emacs.d/url/cookies" . 1076)
+  (dired-filename . "c:/Users/Nikolichnik/Documents/work/notes/notes.tex"))
+ ("c:/Users/Nikolichnik/Documents/"
+  (dired-filename . "c:/Users/Nikolichnik/Documents/Ana_HTML_CSS.txt"))
+ ("c:/Users/Nikolichnik/Documents/work/"
+  (dired-filename . "c:/Users/Nikolichnik/Documents/work/.gitignore"))
+ ("c:/Users/Nikolichnik/Documents/work/.gitignore" . 14)
+ ("c:/Users/Nikolichnik/Documents/work/notes/notes.org" . 17004)
+ ("c:/Users/Nikolichnik/.emacs.d/savefile/recentf" . 1654)
+ ("c:/Users/Nikolichnik/.emacs.d/url/cookies" . 1288)
  ("c:/Users/Nikolichnik/.emacs.d/"
   (dired-filename . "c:/Users/Nikolichnik/.emacs.d/projectile-bookmarks.eld"))
  ("c:/Users/Nikolichnik/.emacs.d/elpa/ag-20180225.1040/ag-autoloads.el" . 3041)

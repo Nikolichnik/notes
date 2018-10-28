@@ -165,6 +165,19 @@ by Prelude.")
   (interactive)
   (add-hook 'eww-after-render-hook #'my-eww-readable-nonce)
   (eww "https://google.com"))
+  
+  ;; Set bash as default terminal
+ 
+ ;; When running in Windows, we want to use an alternate shell so we
+ ;; can be more unixy.
+ (setq shell-file-name "C:/cygwin64/Cygwin")
+ (setq explicit-shell-file-name shell-file-name)
+ (setenv "PATH"
+    (concat ".:/usr/local/bin:/cygwin64/bin:/bin:"
+        (replace-regexp-in-string " " "\\\\ "
+            (replace-regexp-in-string "\\\\" "/"
+                (replace-regexp-in-string "\\([A-Za-z]\\):" "/\\1"
+                    (getenv "PATH"))))))
  
  (tool-bar-mode -1)
  ;;(menu-bar-mode -1)
