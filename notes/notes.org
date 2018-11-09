@@ -1,3 +1,65 @@
+* Buzzwords :buzz:
+** [[https://chemistry.apache.org/project/cmis.html][CMIS - Content Mnagement Interoperability Services]]
+  Open standard that allows different content management systems to inter-operate over the Internet.[1] Specifically, CMIS defines an abstraction layer for controlling diverse document management systems and repositories using web protocols.
+** [[http://cifs.com/][CIFS -Common Internet File System]]
+ Network filesystem protocol used for providing shared access to files and printers between machines on the network.
+** [[https://en.wikipedia.org/wiki/JSON][JSON - JavaScript Object Notation]]
+An open-standard file format that uses human-readable text to transmit data objects consisting of attribute–value pairs and array data types (or any other serializable value). It is a very common data format used for asynchronous browser–server communication, including as a replacement for XML in some AJAX-style systems.[2]
+
+JSON is a language-independent data format. It was derived from JavaScript, but as of 2017 many programming languages include code to generate and parse JSON-format data. The official Internet media type for JSON is application/json. JSON filenames use the extension .json.
+** [[https://en.wikipedia.org/wiki/Ajax_(programming)][AJAX - Asychronous JavaScript and XML]]
+A set of Web development techniques using many Web technologies on the client side to create asynchronous Web applications. With Ajax, Web applications can send and retrieve data from a server asynchronously (in the background) without interfering with the display and behavior of the existing page. By decoupling the data interchange layer from the presentation layer, Ajax allows Web pages, and by extension Web applications, to change content dynamically without the need to reload the entire page.[3] In practice, modern implementations commonly utilize JSON instead of XML due to the advantages of JSON being native to JavaScript.
+** [[https://www.restapitutorial.com/lessons/whatisrest.html][REST - Representational State Transfer]]
+Make a call from client, to server, using HTTP protocol, get response. Change "http" to "graph" in url and you get JSON (JavaScript Object Notation)  respresentation of an object.
+The REST architectural style describes six constraints. These constraints, applied to the architecture, were originally communicated by Roy Fielding in his doctoral dissertation and defines the basis of RESTful-style.
+
+The six constraints are:
+
+Uniform Interface
+Stateless
+Cacheable
+Client-Server
+Layered System
+Code on Demand (optional)
+
+RESTful web services allow the requesting systems to access and manipulate textual representations of web resources by using a uniform and predefined set of stateless operations. Other kinds of web services, such as SOAP web services, expose their own arbitrary sets of operations.
+** [[https://en.wikipedia.org/wiki/SOAP][SOAP - Simple Object Access Control]]
+ A messaging protocol specification for exchanging structured information in the implementation of web services in computer networks. Its purpose is to induce extensibility, neutrality and independence. It uses XML Information Set for its message format, and relies on application layer protocols, most often Hypertext Transfer Protocol (HTTP) or Simple Mail Transfer Protocol (SMTP), for message negotiation and transmission.
+** [[https://en.wikipedia.org/wiki/Single_sign-on][SSO - Single Sign On]]
+ A property of access control of multiple related, yet independent, software systems. With this property, a user logs in with a single ID and password to gain access to a connected system or accomplished using the Lightweight Directory Access Protocol (LDAP) and stored LDAP databases on (directory) servers.
+** [[https://ldap.com/][LDAP -Lightweight Directory Access Protocol]]
+A mature, flexible, and well supported standards-based mechanism for interacting with directory servers. It’s often used for authentication and storing information about users, groups, and applications, but an LDAP directory server is a fairly general-purpose data store and can be used in a wide variety of applications.
+** [[https://en.wikipedia.org/wiki/WebDAV][WebDAV - Web Distributed Authoring and Versioning]]
+An extension of the Hypertext Transfer Protocol (HTTP) that allows clients to perform remote Web content authoring operations.
+** [[https://ecmarchitect.com/alfresco-developer-series-tutorials/webscripts/tutorial/tutorial.html][Web Script]]
+Think of a web script as a chunk of code that is mapped to a human-readable URL.
+** [[https://en.wikipedia.org/wiki/Application_programming_interface][API -Application Programming Interface]]
+A set of subroutine definitions, communication protocols, and tools for building software. In general terms, it is a set of clearly defined methods of communication among various components. A good API makes it easier to develop a computer program by providing all the building blocks, which are then put together by the programmer.
+** [[https://en.wikipedia.org/wiki/Software_development_kit][SDK - Software Development Kit (devkit)]]
+A set of software development tools that allows the creation of applications for a certain software package, software framework, hardware platform, computer system, video game console, operating system, or similar development platform. To enrich applications with advanced functionalities, advertisements, push notifications, and more, most app developers implement specific software development kits. Some SDKs are critical for developing a platform-specific app. For example, the development of an Android app on Java platform requires a Java Development Kit, for iOS apps the iOS SDK, and for Universal Windows Platform the .NET Framework SDK. There are also SDKs that are installed in apps to provide analytics and data about application activity; prominent creators of these types of SDKs include Google, InMobi, and Facebook.
+** [[https://softwareengineering.stackexchange.com/questions/101873/whats-the-difference-between-an-api-and-an-sdk][API vs SDK]]
+It rather falls along the lines of "All SDKs are/contain APIs but not all APIs are SDKs".
+
+An SDK seems to be a complete set of APIs that allow you to perform most any action you would need to for creating applications. In addition an SDK may include other tools for developing for the platform/item that it is for.
+
+An API on the other hand is just a series of related methods that may be good for a specific purpose.
+
+As an example, the JDK (Java Development Kit) contains the API as well as the compilers, runtimes, and other miscellaneous tools. The Java API is simply all the libraries that make up the core language that you can work with out of the box.
+** [[https://en.wikipedia.org/wiki/File_Transfer_Protocol][FTP - File Transfer Protocol]]
+A standard network protocol used for the transfer of computer files between a client and server on a computer network.
+** [[https://en.wikipedia.org/wiki/Internet_Message_Access_Protocol][IMAP - Internet Message Access Protocol]]
+An Internet standard protocol used by email clients to retrieve email messages from a mail server over a TCP/IP connection.
+** [[https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol][HTTP - Hypertext Transfer Protocol]]
+An application protocol for distributed, collaborative, hypermedia information systems.[1] HTTP is the foundation of data communication for the World Wide Web, where hypertext documents include hyperlinks to other resources that the user can easily access, for example by a mouse click or by tapping the screen. HTTP was developed to facilitate hypertext and the World Wide Web.
+** URI - Uniform Resource Identifier
+** URL - Uniform Resource Locator
+* CLI :cli:
+** Linux
+*** Cheatsheet
+*** General
+** Windows
+*** Cheatsheet
+*** General
 * Git :git:
 ** Cheatsheet
 *** Basics
@@ -277,15 +339,28 @@
 **** Links
 ***** [[https://www.tutorialspoint.com/maven/index.htm][Tutorial Point]]
 ***** [[https://www.youtube.com/watch?v=0CFWeVgzsqY][YouTube]]
+** Alfresco :alfresco:
+*** Resources
+**** Books
+***** [[pdfview:../notes/pdf/ALFRESCO_ONE_5X_DEVELOPERS_GUIDE_SECOND_EDITION.pdf::23][Alfresco One 5.x Developer's Guide]]
+***** [[pdfview:../notes/pdf/EdgeROIDocumentManagement.pdf::1][Edge ROI Document Management]]
+***** [[pdfview:../notes/pdf/ProfessionalAlfrescoPracticalSolutionsforEnterpriseContentManagement.pdf::1][Alfresco Practical Notes]]
+**** Links
+** Alfresco SDK :alfrescosdk:
+*** Cheatsheet
+**** mvn clean install -Dmaven.test.skip=true
+Skip tests while starting Alfresco SDK.
 * JavaScript :javascript:
 ** Resources
 *** Books
 **** [[pdfview:../notes/pdf/EffectiveJavaScript.pdf::1][Effective Javascript]]
 **** [[pdfview:../notes/pdf/JavaScriptTheGoodParts.pdf::1][JavaScript The Good Parts]]
 **** [[pdfview:../notes/pdf/EloquentJavaScript.pdf::1][Eloquent JavaScript]]
-**** TODO JS Divlji Zapad
+**** [[pdfview:../notes/pdf/JSDivljiZapad.pdf::1][JS Divlji Zapd]]
 *** Links
 **** [[https://www.w3schools.com/js/js_json_intro.asp][w3schools - JSON]] :json:
+**** [[https://stackoverflow.com/questions/500431/what-is-the-scope-of-variables-in-javascript][Scope of Variables in JS - StackOverflow]]
+**** [[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/block][Block scoping]]
 * HTML/CSS :html:css:
 ** Tomcat :tomcat:
 *** [[http://www.vogella.com/tutorials/ApacheTomcat/article.html][Vogella Tutorial]]

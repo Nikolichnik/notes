@@ -3,22 +3,29 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<title>notes</title>
-<!-- 2018-10-24 sre 14:29 -->
-<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta  name="generator" content="Org-mode" />
+<!-- 2018-11-09 pet 08:52 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
   .todo   { font-family: monospace; color: red; }
-  .done   { color: green; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
   .tag    { background-color: #eee; font-family: monospace;
             padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
   .underline { text-decoration: underline; }
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
@@ -45,27 +52,111 @@
     border: 1px solid black;
   }
   pre.src:hover:before { display: inline;}
-  pre.src-sh:before    { content: 'sh'; }
-  pre.src-bash:before  { content: 'sh'; }
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
   pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-R:before     { content: 'R'; }
-  pre.src-perl:before  { content: 'Perl'; }
-  pre.src-java:before  { content: 'Java'; }
-  pre.src-sql:before   { content: 'SQL'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
 
   table { border-collapse:collapse; }
   caption.t-above { caption-side: top; }
   caption.t-bottom { caption-side: bottom; }
   td, th { vertical-align:top;  }
-  th.right  { text-align: center;  }
-  th.left   { text-align: center;   }
-  th.center { text-align: center; }
-  td.right  { text-align: right;  }
-  td.left   { text-align: left;   }
-  td.center { text-align: center; }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
   dt { font-weight: bold; }
-  .footpara:nth-child(2) { display: inline; }
-  .footpara { display: block; }
+  .footpara { display: inline; }
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
@@ -85,6 +176,7 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
 <script type="text/javascript">
@@ -92,7 +184,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2013 Free Software Foundation, Inc.
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -136,52 +228,147 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">notes</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">1. Git&#xa0;&#xa0;&#xa0;<span class="tag"><span class="git">git</span></span></a>
+<li><a href="#org0afbae7">1. Buzzwords&#xa0;&#xa0;&#xa0;<span class="tag"><span class="buzz">buzz</span></span></a>
 <ul>
-<li><a href="#sec-1-1">1.1. Cheatsheet</a>
-<ul>
-<li><a href="#sec-1-1-1">1.1.1. Basics</a></li>
-<li><a href="#sec-1-1-2">1.1.2. Undoing Changes</a></li>
-<li><a href="#sec-1-1-3">1.1.3. Rewriting Git History</a></li>
-<li><a href="#sec-1-1-4">1.1.4. Git Branches</a></li>
-<li><a href="#sec-1-1-5">1.1.5. Remote Repositories</a></li>
+<li><a href="#orged46b04">1.1. CMIS - Content Mnagement Interoperability Services</a></li>
+<li><a href="#orgbb31661">1.2. CIFS -Common Internet File System</a></li>
+<li><a href="#org8777b43">1.3. JSON - JavaScript Object Notation</a></li>
+<li><a href="#org92c07d6">1.4. AJAX - Asychronous JavaScript and XML</a></li>
+<li><a href="#org16a7fb9">1.5. REST - Representational State Transfer</a></li>
+<li><a href="#org6dfabe8">1.6. SOAP - Simple Object Access Control</a></li>
+<li><a href="#orgdd69026">1.7. SSO - Single Sign On</a></li>
+<li><a href="#org994c74c">1.8. LDAP -Lightweight Directory Access Protocol</a></li>
+<li><a href="#org52e55d5">1.9. WebDAV - Web Distributed Authoring and Versioning</a></li>
+<li><a href="#orgf5c5da6">1.10. Web Script</a></li>
+<li><a href="#org22941c7">1.11. API -Application Programming Interface</a></li>
+<li><a href="#org8ca18bc">1.12. SDK - Software Development Kit (devkit)</a></li>
+<li><a href="#org4d46eab">1.13. API vs SDK</a></li>
+<li><a href="#org8a72ab3">1.14. FTP - File Transfer Protocol</a></li>
+<li><a href="#orgd067d19">1.15. IMAP - Internet Message Access Protocol</a></li>
+<li><a href="#org56cfabf">1.16. HTTP - Hypertext Transfer Protocol</a></li>
+<li><a href="#org5d33758">1.17. URI - Uniform Resource Identifier</a></li>
+<li><a href="#org89d4be1">1.18. URL - Uniform Resource Locator</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-2">1.2. Install Git</a>
+<li><a href="#org8e141f8">2. CLI&#xa0;&#xa0;&#xa0;<span class="tag"><span class="cli">cli</span></span></a>
 <ul>
-<li><a href="#sec-1-2-1">1.2.1. Install Git on Linux</a></li>
-<li><a href="#sec-1-2-2">1.2.2. <span class="todo TODO">TODO</span> Install Git on Windows</a></li>
-<li><a href="#sec-1-2-3">1.2.3. <span class="todo TODO">TODO</span> Install Git on Mac</a></li>
+<li><a href="#orge32a715">2.1. Linux</a>
+<ul>
+<li><a href="#orgcdade7f">2.1.1. Cheatsheet</a></li>
+<li><a href="#orgb707d23">2.1.2. General</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-3">1.3. What is Git?</a>
+<li><a href="#org80e0ee8">2.2. Windows</a>
 <ul>
-<li><a href="#sec-1-3-1">1.3.1. Performance</a></li>
-<li><a href="#sec-1-3-2">1.3.2. Security</a></li>
-<li><a href="#sec-1-3-3">1.3.3. Flexibility</a></li>
-<li><a href="#sec-1-3-4">1.3.4. Version control with Git</a></li>
-</ul>
-</li>
-<li><a href="#sec-1-4">1.4. Concepts and Benefits</a></li>
-<li><a href="#sec-1-5">1.5. Git for developers</a>
-<ul>
-<li><a href="#sec-1-5-1">1.5.1. Feature Branch Workflow</a></li>
-<li><a href="#sec-1-5-2">1.5.2. Distributed Development</a></li>
-<li><a href="#sec-1-5-3">1.5.3. Pull Requests</a></li>
+<li><a href="#orgcaf93d3">2.2.1. Cheatsheet</a></li>
+<li><a href="#org690579a">2.2.2. General</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#sec-2">2. Java&#xa0;&#xa0;&#xa0;<span class="tag"><span class="java">java</span></span></a>
+<li><a href="#orge1b6b36">3. Git&#xa0;&#xa0;&#xa0;<span class="tag"><span class="git">git</span></span></a>
 <ul>
-<li><a href="#sec-2-1">2.1. Spring&#xa0;&#xa0;&#xa0;<span class="tag"><span class="spring">spring</span></span></a>
+<li><a href="#org14fc9f3">3.1. Cheatsheet</a>
 <ul>
-<li><a href="#sec-2-1-1">2.1.1. Dependency Injection&#xa0;&#xa0;&#xa0;<span class="tag"><span class="di">di</span></span></a></li>
+<li><a href="#org1c4cad5">3.1.1. Basics</a></li>
+<li><a href="#org4db7f68">3.1.2. Undoing Changes</a></li>
+<li><a href="#orgf1623e8">3.1.3. Rewriting Git History</a></li>
+<li><a href="#org5959930">3.1.4. Git Branches</a></li>
+<li><a href="#org58e608b">3.1.5. Remote Repositories</a></li>
+</ul>
+</li>
+<li><a href="#org795503d">3.2. Install Git</a>
+<ul>
+<li><a href="#orgd341944">3.2.1. Install Git on Linux</a></li>
+<li><a href="#org45fe192">3.2.2. <span class="todo TODO">TODO</span> Install Git on Windows</a></li>
+<li><a href="#org94a2692">3.2.3. <span class="todo TODO">TODO</span> Install Git on Mac</a></li>
+</ul>
+</li>
+<li><a href="#org43a04f5">3.3. What is Git?</a>
+<ul>
+<li><a href="#org6181231">3.3.1. Performance</a></li>
+<li><a href="#orga522d18">3.3.2. Security</a></li>
+<li><a href="#orgf4d6df9">3.3.3. Flexibility</a></li>
+<li><a href="#org5a9d7c0">3.3.4. Version control with Git</a></li>
+</ul>
+</li>
+<li><a href="#org9d734f3">3.4. Concepts and Benefits</a></li>
+<li><a href="#org5f02437">3.5. Git for developers</a>
+<ul>
+<li><a href="#org3f11223">3.5.1. Feature Branch Workflow</a></li>
+<li><a href="#org0b05175">3.5.2. Distributed Development</a></li>
+<li><a href="#orga4d743e">3.5.3. Pull Requests</a></li>
+</ul>
+</li>
+<li><a href="#org1c2b56e">3.6. Resources</a>
+<ul>
+<li><a href="#orgbcb5132">3.6.1. Books</a></li>
+<li><a href="#orgfc3a429">3.6.2. Links</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org1e99dff">4. Java&#xa0;&#xa0;&#xa0;<span class="tag"><span class="java">java</span></span></a>
+<ul>
+<li><a href="#orga6696c6">4.1. Core&#xa0;&#xa0;&#xa0;<span class="tag"><span class="core">core</span></span></a>
+<ul>
+<li><a href="#org9df70e6">4.1.1. Resources</a></li>
+</ul>
+</li>
+<li><a href="#orgb4a44c6">4.2. Spring&#xa0;&#xa0;&#xa0;<span class="tag"><span class="spring">spring</span></span></a>
+<ul>
+<li><a href="#orgae20d76">4.2.1. Dependency injection&#xa0;&#xa0;&#xa0;<span class="tag"><span class="di">di</span></span></a></li>
+<li><a href="#orgcaf68dd">4.2.2. Resources</a></li>
+</ul>
+</li>
+<li><a href="#org71099e1">4.3. Maven&#xa0;&#xa0;&#xa0;<span class="tag"><span class="maven">maven</span></span></a>
+<ul>
+<li><a href="#org797fdf8">4.3.1. Resources</a></li>
+</ul>
+</li>
+<li><a href="#orge05278b">4.4. Alfresco&#xa0;&#xa0;&#xa0;<span class="tag"><span class="alfresco">alfresco</span></span></a>
+<ul>
+<li><a href="#org0eb0fe1">4.4.1. Resources</a></li>
+</ul>
+</li>
+<li><a href="#org8355217">4.5. Alfresco SDK&#xa0;&#xa0;&#xa0;<span class="tag"><span class="alfrescosdk">alfrescosdk</span></span></a>
+<ul>
+<li><a href="#org305b390">4.5.1. Cheatsheet</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgbc24da1">5. JavaScript&#xa0;&#xa0;&#xa0;<span class="tag"><span class="javascript">javascript</span></span></a>
+<ul>
+<li><a href="#orgeb8f31d">5.1. Resources</a>
+<ul>
+<li><a href="#org91441f8">5.1.1. Books</a></li>
+<li><a href="#org93f31d4">5.1.2. Links</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgbbf1611">6. HTML/CSS&#xa0;&#xa0;&#xa0;<span class="tag"><span class="html">html</span>&#xa0;<span class="css">css</span></span></a>
+<ul>
+<li><a href="#org03cb01b">6.1. Tomcat&#xa0;&#xa0;&#xa0;<span class="tag"><span class="tomcat">tomcat</span></span></a>
+<ul>
+<li><a href="#orge423e88">6.1.1. Vogella Tutorial</a></li>
+</ul>
+</li>
+<li><a href="#org6dc0d59">6.2. HTTP Methods&#xa0;&#xa0;&#xa0;<span class="tag"><span class="httpmethods">httpmethods</span></span></a>
+<ul>
+<li><a href="#org3bb3ca6">6.2.1. RESTful API</a></li>
+<li><a href="#org2b1e2e0">6.2.2. w3schools</a></li>
+</ul>
+</li>
+<li><a href="#org61db01a">6.3. Resources</a>
+<ul>
+<li><a href="#org2fef34a">6.3.1. Books</a></li>
+<li><a href="#orgd1bac2b">6.3.2. Links</a></li>
 </ul>
 </li>
 </ul>
@@ -189,392 +376,682 @@ for the JavaScript code in this tag.
 </ul>
 </div>
 </div>
-<div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Git&#xa0;&#xa0;&#xa0;<span class="tag"><span class="git">git</span></span></h2>
+<div id="outline-container-org0afbae7" class="outline-2">
+<h2 id="org0afbae7"><span class="section-number-2">1</span> Buzzwords&#xa0;&#xa0;&#xa0;<span class="tag"><span class="buzz">buzz</span></span></h2>
 <div class="outline-text-2" id="text-1">
-</div><div id="outline-container-sec-1-1" class="outline-3">
-<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Cheatsheet</h3>
+</div>
+<div id="outline-container-orged46b04" class="outline-3">
+<h3 id="orged46b04"><span class="section-number-3">1.1</span> <a href="https://chemistry.apache.org/project/cmis.html">CMIS - Content Mnagement Interoperability Services</a></h3>
 <div class="outline-text-3" id="text-1-1">
-</div><div id="outline-container-sec-1-1-1" class="outline-4">
-<h4 id="sec-1-1-1"><span class="section-number-4">1.1.1</span> Basics</h4>
-<div class="outline-text-4" id="text-1-1-1">
-</div><ol class="org-ol"><li><a id="sec-1-1-1-1" name="sec-1-1-1-1"></a>git init &lt;directory&gt;<br  /><div class="outline-text-5" id="text-1-1-1-1">
+<p>
+Open standard that allows different content management systems to inter-operate over the Internet.[1] Specifically, CMIS defines an abstraction layer for controlling diverse document management systems and repositories using web protocols.
+</p>
+</div>
+</div>
+<div id="outline-container-orgbb31661" class="outline-3">
+<h3 id="orgbb31661"><span class="section-number-3">1.2</span> <a href="http://cifs.com/">CIFS -Common Internet File System</a></h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Network filesystem protocol used for providing shared access to files and printers between machines on the network.
+</p>
+</div>
+</div>
+<div id="outline-container-org8777b43" class="outline-3">
+<h3 id="org8777b43"><span class="section-number-3">1.3</span> <a href="https://en.wikipedia.org/wiki/JSON">JSON - JavaScript Object Notation</a></h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+An open-standard file format that uses human-readable text to transmit data objects consisting of attribute–value pairs and array data types (or any other serializable value). It is a very common data format used for asynchronous browser–server communication, including as a replacement for XML in some AJAX-style systems.[2]
+</p>
+
+<p>
+JSON is a language-independent data format. It was derived from JavaScript, but as of 2017 many programming languages include code to generate and parse JSON-format data. The official Internet media type for JSON is application/json. JSON filenames use the extension .json.
+</p>
+</div>
+</div>
+<div id="outline-container-org92c07d6" class="outline-3">
+<h3 id="org92c07d6"><span class="section-number-3">1.4</span> <a href="https://en.wikipedia.org/wiki/Ajax_(programming)">AJAX - Asychronous JavaScript and XML</a></h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+A set of Web development techniques using many Web technologies on the client side to create asynchronous Web applications. With Ajax, Web applications can send and retrieve data from a server asynchronously (in the background) without interfering with the display and behavior of the existing page. By decoupling the data interchange layer from the presentation layer, Ajax allows Web pages, and by extension Web applications, to change content dynamically without the need to reload the entire page.[3] In practice, modern implementations commonly utilize JSON instead of XML due to the advantages of JSON being native to JavaScript.
+</p>
+</div>
+</div>
+<div id="outline-container-org16a7fb9" class="outline-3">
+<h3 id="org16a7fb9"><span class="section-number-3">1.5</span> <a href="https://www.restapitutorial.com/lessons/whatisrest.html">REST - Representational State Transfer</a></h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+Make a call from client, to server, using HTTP protocol, get response. Change "http" to "graph" in url and you get JSON (JavaScript Object Notation)  respresentation of an object.
+The REST architectural style describes six constraints. These constraints, applied to the architecture, were originally communicated by Roy Fielding in his doctoral dissertation and defines the basis of RESTful-style.
+</p>
+
+<p>
+The six constraints are:
+</p>
+
+<p>
+Uniform Interface
+Stateless
+Cacheable
+Client-Server
+Layered System
+Code on Demand (optional)
+</p>
+
+<p>
+RESTful web services allow the requesting systems to access and manipulate textual representations of web resources by using a uniform and predefined set of stateless operations. Other kinds of web services, such as SOAP web services, expose their own arbitrary sets of operations.
+</p>
+</div>
+</div>
+<div id="outline-container-org6dfabe8" class="outline-3">
+<h3 id="org6dfabe8"><span class="section-number-3">1.6</span> <a href="https://en.wikipedia.org/wiki/SOAP">SOAP - Simple Object Access Control</a></h3>
+<div class="outline-text-3" id="text-1-6">
+<p>
+A messaging protocol specification for exchanging structured information in the implementation of web services in computer networks. Its purpose is to induce extensibility, neutrality and independence. It uses XML Information Set for its message format, and relies on application layer protocols, most often Hypertext Transfer Protocol (HTTP) or Simple Mail Transfer Protocol (SMTP), for message negotiation and transmission.
+</p>
+</div>
+</div>
+<div id="outline-container-orgdd69026" class="outline-3">
+<h3 id="orgdd69026"><span class="section-number-3">1.7</span> <a href="https://en.wikipedia.org/wiki/Single_sign-on">SSO - Single Sign On</a></h3>
+<div class="outline-text-3" id="text-1-7">
+<p>
+A property of access control of multiple related, yet independent, software systems. With this property, a user logs in with a single ID and password to gain access to a connected system or accomplished using the Lightweight Directory Access Protocol (LDAP) and stored LDAP databases on (directory) servers.
+</p>
+</div>
+</div>
+<div id="outline-container-org994c74c" class="outline-3">
+<h3 id="org994c74c"><span class="section-number-3">1.8</span> <a href="https://ldap.com/">LDAP -Lightweight Directory Access Protocol</a></h3>
+<div class="outline-text-3" id="text-1-8">
+<p>
+A mature, flexible, and well supported standards-based mechanism for interacting with directory servers. It’s often used for authentication and storing information about users, groups, and applications, but an LDAP directory server is a fairly general-purpose data store and can be used in a wide variety of applications.
+</p>
+</div>
+</div>
+<div id="outline-container-org52e55d5" class="outline-3">
+<h3 id="org52e55d5"><span class="section-number-3">1.9</span> <a href="https://en.wikipedia.org/wiki/WebDAV">WebDAV - Web Distributed Authoring and Versioning</a></h3>
+<div class="outline-text-3" id="text-1-9">
+<p>
+An extension of the Hypertext Transfer Protocol (HTTP) that allows clients to perform remote Web content authoring operations.
+</p>
+</div>
+</div>
+<div id="outline-container-orgf5c5da6" class="outline-3">
+<h3 id="orgf5c5da6"><span class="section-number-3">1.10</span> <a href="https://ecmarchitect.com/alfresco-developer-series-tutorials/webscripts/tutorial/tutorial.html">Web Script</a></h3>
+<div class="outline-text-3" id="text-1-10">
+<p>
+Think of a web script as a chunk of code that is mapped to a human-readable URL.
+</p>
+</div>
+</div>
+<div id="outline-container-org22941c7" class="outline-3">
+<h3 id="org22941c7"><span class="section-number-3">1.11</span> <a href="https://en.wikipedia.org/wiki/Application_programming_interface">API -Application Programming Interface</a></h3>
+<div class="outline-text-3" id="text-1-11">
+<p>
+A set of subroutine definitions, communication protocols, and tools for building software. In general terms, it is a set of clearly defined methods of communication among various components. A good API makes it easier to develop a computer program by providing all the building blocks, which are then put together by the programmer.
+</p>
+</div>
+</div>
+<div id="outline-container-org8ca18bc" class="outline-3">
+<h3 id="org8ca18bc"><span class="section-number-3">1.12</span> <a href="https://en.wikipedia.org/wiki/Software_development_kit">SDK - Software Development Kit (devkit)</a></h3>
+<div class="outline-text-3" id="text-1-12">
+<p>
+A set of software development tools that allows the creation of applications for a certain software package, software framework, hardware platform, computer system, video game console, operating system, or similar development platform. To enrich applications with advanced functionalities, advertisements, push notifications, and more, most app developers implement specific software development kits. Some SDKs are critical for developing a platform-specific app. For example, the development of an Android app on Java platform requires a Java Development Kit, for iOS apps the iOS SDK, and for Universal Windows Platform the .NET Framework SDK. There are also SDKs that are installed in apps to provide analytics and data about application activity; prominent creators of these types of SDKs include Google, InMobi, and Facebook.
+</p>
+</div>
+</div>
+<div id="outline-container-org4d46eab" class="outline-3">
+<h3 id="org4d46eab"><span class="section-number-3">1.13</span> <a href="https://softwareengineering.stackexchange.com/questions/101873/whats-the-difference-between-an-api-and-an-sdk">API vs SDK</a></h3>
+<div class="outline-text-3" id="text-1-13">
+<p>
+It rather falls along the lines of "All SDKs are/contain APIs but not all APIs are SDKs".
+</p>
+
+<p>
+An SDK seems to be a complete set of APIs that allow you to perform most any action you would need to for creating applications. In addition an SDK may include other tools for developing for the platform/item that it is for.
+</p>
+
+<p>
+An API on the other hand is just a series of related methods that may be good for a specific purpose.
+</p>
+
+<p>
+As an example, the JDK (Java Development Kit) contains the API as well as the compilers, runtimes, and other miscellaneous tools. The Java API is simply all the libraries that make up the core language that you can work with out of the box.
+</p>
+</div>
+</div>
+<div id="outline-container-org8a72ab3" class="outline-3">
+<h3 id="org8a72ab3"><span class="section-number-3">1.14</span> <a href="https://en.wikipedia.org/wiki/File_Transfer_Protocol">FTP - File Transfer Protocol</a></h3>
+<div class="outline-text-3" id="text-1-14">
+<p>
+A standard network protocol used for the transfer of computer files between a client and server on a computer network.
+</p>
+</div>
+</div>
+<div id="outline-container-orgd067d19" class="outline-3">
+<h3 id="orgd067d19"><span class="section-number-3">1.15</span> <a href="https://en.wikipedia.org/wiki/Internet_Message_Access_Protocol">IMAP - Internet Message Access Protocol</a></h3>
+<div class="outline-text-3" id="text-1-15">
+<p>
+An Internet standard protocol used by email clients to retrieve email messages from a mail server over a TCP/IP connection.
+</p>
+</div>
+</div>
+<div id="outline-container-org56cfabf" class="outline-3">
+<h3 id="org56cfabf"><span class="section-number-3">1.16</span> <a href="https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol">HTTP - Hypertext Transfer Protocol</a></h3>
+<div class="outline-text-3" id="text-1-16">
+<p>
+An application protocol for distributed, collaborative, hypermedia information systems.[1] HTTP is the foundation of data communication for the World Wide Web, where hypertext documents include hyperlinks to other resources that the user can easily access, for example by a mouse click or by tapping the screen. HTTP was developed to facilitate hypertext and the World Wide Web.
+</p>
+</div>
+</div>
+<div id="outline-container-org5d33758" class="outline-3">
+<h3 id="org5d33758"><span class="section-number-3">1.17</span> URI - Uniform Resource Identifier</h3>
+</div>
+<div id="outline-container-org89d4be1" class="outline-3">
+<h3 id="org89d4be1"><span class="section-number-3">1.18</span> URL - Uniform Resource Locator</h3>
+</div>
+</div>
+<div id="outline-container-org8e141f8" class="outline-2">
+<h2 id="org8e141f8"><span class="section-number-2">2</span> CLI&#xa0;&#xa0;&#xa0;<span class="tag"><span class="cli">cli</span></span></h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orge32a715" class="outline-3">
+<h3 id="orge32a715"><span class="section-number-3">2.1</span> Linux</h3>
+<div class="outline-text-3" id="text-2-1">
+</div>
+<div id="outline-container-orgcdade7f" class="outline-4">
+<h4 id="orgcdade7f"><span class="section-number-4">2.1.1</span> Cheatsheet</h4>
+</div>
+<div id="outline-container-orgb707d23" class="outline-4">
+<h4 id="orgb707d23"><span class="section-number-4">2.1.2</span> General</h4>
+</div>
+</div>
+<div id="outline-container-org80e0ee8" class="outline-3">
+<h3 id="org80e0ee8"><span class="section-number-3">2.2</span> Windows</h3>
+<div class="outline-text-3" id="text-2-2">
+</div>
+<div id="outline-container-orgcaf93d3" class="outline-4">
+<h4 id="orgcaf93d3"><span class="section-number-4">2.2.1</span> Cheatsheet</h4>
+</div>
+<div id="outline-container-org690579a" class="outline-4">
+<h4 id="org690579a"><span class="section-number-4">2.2.2</span> General</h4>
+</div>
+</div>
+</div>
+<div id="outline-container-orge1b6b36" class="outline-2">
+<h2 id="orge1b6b36"><span class="section-number-2">3</span> Git&#xa0;&#xa0;&#xa0;<span class="tag"><span class="git">git</span></span></h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org14fc9f3" class="outline-3">
+<h3 id="org14fc9f3"><span class="section-number-3">3.1</span> Cheatsheet</h3>
+<div class="outline-text-3" id="text-3-1">
+</div>
+<div id="outline-container-org1c4cad5" class="outline-4">
+<h4 id="org1c4cad5"><span class="section-number-4">3.1.1</span> Basics</h4>
+<div class="outline-text-4" id="text-3-1-1">
+</div>
+<ol class="org-ol">
+<li><a id="orgd7c3ab4"></a>git init &lt;directory&gt;<br />
+<div class="outline-text-5" id="text-3-1-1-1">
 <p>
 Create empty Git repo in specified directory. Run with no arguments
 to initialize the current directory as a git repository.
 </p>
 </div>
 </li>
-<li><a id="sec-1-1-1-2" name="sec-1-1-1-2"></a>git clone &lt;repo&gt;<br  /><div class="outline-text-5" id="text-1-1-1-2">
+<li><a id="org54766bf"></a>git clone &lt;repo&gt;<br />
+<div class="outline-text-5" id="text-3-1-1-2">
 <p>
 Clone repo located at &lt;repo&gt; onto local machine. Original repo can be
 located on the local filesystem or on a remote machine via HTTP or SSH.
 </p>
 </div>
 </li>
-<li><a id="sec-1-1-1-3" name="sec-1-1-1-3"></a>git config user.name &lt;name&gt;<br  /><div class="outline-text-5" id="text-1-1-1-3">
+<li><a id="orgf3bac68"></a>git config user.name &lt;name&gt;<br />
+<div class="outline-text-5" id="text-3-1-1-3">
 <p>
 Define author name to be used for all commits in current repo. Devs
 commonly use &#x2013;global flag to set config options for current user.
 </p>
 </div>
-<ol class="org-ol"><li><a id="sec-1-1-1-3-1" name="sec-1-1-1-3-1"></a>git config &#x2013;global user.name &lt;name&gt;<br  /><div class="outline-text-6" id="text-1-1-1-3-1">
+<ol class="org-ol">
+<li><a id="org87f8ffb"></a>git config &#x2013;global user.name &lt;name&gt;<br />
+<div class="outline-text-6" id="text-3-1-1-3-1">
 <p>
 Define the author name to be used for all commits by the current user.
 </p>
 </div>
 </li>
-<li><a id="sec-1-1-1-3-2" name="sec-1-1-1-3-2"></a>git config &#x2013;global user.email &lt;email&gt;<br  /><div class="outline-text-6" id="text-1-1-1-3-2">
+<li><a id="org4170d74"></a>git config &#x2013;global user.email &lt;email&gt;<br />
+<div class="outline-text-6" id="text-3-1-1-3-2">
 <p>
 Define the author email to be used for all commits by the current user.
 </p>
 </div>
 </li>
-<li><a id="sec-1-1-1-3-3" name="sec-1-1-1-3-3"></a>git config &#x2013;global alias. &lt;alias-name&gt; &lt;git-command&gt;<br  /><div class="outline-text-6" id="text-1-1-1-3-3">
+<li><a id="orgd3aa91b"></a>git config &#x2013;global alias. &lt;alias-name&gt; &lt;git-command&gt;<br />
+<div class="outline-text-6" id="text-3-1-1-3-3">
 <p>
 Create shortcut for a Git command. E.g. alias.glog log &#x2013;graph
 &#x2013;oneline will set git glog equivalent to git log &#x2013;graph &#x2013;oneline.
 </p>
 </div>
 </li>
-<li><a id="sec-1-1-1-3-4" name="sec-1-1-1-3-4"></a>git config &#x2013;system core.editor &lt;editor&gt;<br  /><div class="outline-text-6" id="text-1-1-1-3-4">
+<li><a id="org0f1542b"></a>git config &#x2013;system core.editor &lt;editor&gt;<br />
+<div class="outline-text-6" id="text-3-1-1-3-4">
 <p>
 Set text editor used by commands for all users on the machine. &lt;editor&gt;
 arg should be the command that launches the desired editor (e.g., vi).
 </p>
 </div>
 </li>
-<li><a id="sec-1-1-1-3-5" name="sec-1-1-1-3-5"></a>git config &#x2013;global &#x2013;edit<br  /><div class="outline-text-6" id="text-1-1-1-3-5">
+<li><a id="orgb7bbb3e"></a>git config &#x2013;global &#x2013;edit<br />
+<div class="outline-text-6" id="text-3-1-1-3-5">
 <p>
 Open the global configuration file in a text editor for manual editing.
 </p>
 </div>
-</li></ol>
 </li>
-<li><a id="sec-1-1-1-4" name="sec-1-1-1-4"></a>git add &lt;directory&gt;<br  /><div class="outline-text-5" id="text-1-1-1-4">
+</ol>
+</li>
+<li><a id="orgc7119e1"></a>git add &lt;directory&gt;<br />
+<div class="outline-text-5" id="text-3-1-1-4">
 <p>
 Stage all changes in &lt;directory&gt; for the next commit.
 Replace &lt;directory&gt; with a &lt;file&gt; to change a specific file. To stage all changes for the next commit, git add . is appropriate command.
 </p>
 </div>
 </li>
-<li><a id="sec-1-1-1-5" name="sec-1-1-1-5"></a>git commit -m "&lt;message&gt;"<br  /><div class="outline-text-5" id="text-1-1-1-5">
+<li><a id="org0507598"></a>git commit -m "&lt;message&gt;"<br />
+<div class="outline-text-5" id="text-3-1-1-5">
 <p>
 Commit the staged snapshot, but instead of launching a text editor,
 use &lt;message&gt; as the commit message.
 </p>
 </div>
-<ol class="org-ol"><li><a id="sec-1-1-1-5-1" name="sec-1-1-1-5-1"></a>git commit &#x2013;amend<br  /><div class="outline-text-6" id="text-1-1-1-5-1">
+<ol class="org-ol">
+<li><a id="org9e4bdd4"></a>git commit &#x2013;amend<br />
+<div class="outline-text-6" id="text-3-1-1-5-1">
 <p>
 Replace the last commit with the staged changes and last commit
 combined. Use with nothing staged to edit the last commit’s message.
 </p>
 </div>
-</li></ol>
 </li>
-<li><a id="sec-1-1-1-6" name="sec-1-1-1-6"></a>git status<br  /><div class="outline-text-5" id="text-1-1-1-6">
+</ol>
+</li>
+<li><a id="orgc6efeba"></a>git status<br />
+<div class="outline-text-5" id="text-3-1-1-6">
 <p>
 List which files are staged, unstaged, and untracked.
 </p>
 </div>
 </li>
-<li><a id="sec-1-1-1-7" name="sec-1-1-1-7"></a>git log<br  /><div class="outline-text-5" id="text-1-1-1-7">
+<li><a id="org6ef0f14"></a>git log<br />
+<div class="outline-text-5" id="text-3-1-1-7">
 <p>
 Display the entire commit history using the default format.
 </p>
 </div>
-<ol class="org-ol"><li><a id="sec-1-1-1-7-1" name="sec-1-1-1-7-1"></a>git log -&lt;limit&gt;<br  /><div class="outline-text-6" id="text-1-1-1-7-1">
+<ol class="org-ol">
+<li><a id="orgb3e4337"></a>git log -&lt;limit&gt;<br />
+<div class="outline-text-6" id="text-3-1-1-7-1">
 <p>
 Limit number of commits by &lt;limit&gt;. E.g. git log -5 will limit to 5
 commits.
 </p>
 </div>
 </li>
-<li><a id="sec-1-1-1-7-2" name="sec-1-1-1-7-2"></a>git log &#x2013;oneline<br  /><div class="outline-text-6" id="text-1-1-1-7-2">
+<li><a id="org2afcd5c"></a>git log &#x2013;oneline<br />
+<div class="outline-text-6" id="text-3-1-1-7-2">
 <p>
 Condense each commit to a single line.
 </p>
 </div>
 </li>
-<li><a id="sec-1-1-1-7-3" name="sec-1-1-1-7-3"></a>git log -p<br  /><div class="outline-text-6" id="text-1-1-1-7-3">
+<li><a id="orgb8dcd8f"></a>git log -p<br />
+<div class="outline-text-6" id="text-3-1-1-7-3">
 <p>
 Display the full diff of each commit.
 </p>
 </div>
 </li>
-<li><a id="sec-1-1-1-7-4" name="sec-1-1-1-7-4"></a>git log &#x2013;stat<br  /><div class="outline-text-6" id="text-1-1-1-7-4">
+<li><a id="orgbeec43a"></a>git log &#x2013;stat<br />
+<div class="outline-text-6" id="text-3-1-1-7-4">
 <p>
 Include which files were altered and the relative number of lines
 that were added or deleted from each of them.
 </p>
 </div>
 </li>
-<li><a id="sec-1-1-1-7-5" name="sec-1-1-1-7-5"></a>git log &#x2013;author="&lt;pattern&gt;"<br  /><div class="outline-text-6" id="text-1-1-1-7-5">
+<li><a id="orge26ea4c"></a>git log &#x2013;author="&lt;pattern&gt;"<br />
+<div class="outline-text-6" id="text-3-1-1-7-5">
 <p>
 Search for commits by a particular author.
 </p>
 </div>
 </li>
-<li><a id="sec-1-1-1-7-6" name="sec-1-1-1-7-6"></a>git log &#x2013;grep="&lt;pattern&gt;"<br  /><div class="outline-text-6" id="text-1-1-1-7-6">
+<li><a id="org6c7b893"></a>git log &#x2013;grep="&lt;pattern&gt;"<br />
+<div class="outline-text-6" id="text-3-1-1-7-6">
 <p>
 Search for commits with a commit message that matches &lt;pattern&gt;.
 </p>
 </div>
 </li>
-<li><a id="sec-1-1-1-7-7" name="sec-1-1-1-7-7"></a>git log &lt;since&gt;..&lt;until&gt;<br  /><div class="outline-text-6" id="text-1-1-1-7-7">
+<li><a id="org7fe4e91"></a>git log &lt;since&gt;..&lt;until&gt;<br />
+<div class="outline-text-6" id="text-3-1-1-7-7">
 <p>
 Show commits that occur between &lt;since&gt; and &lt;until&gt;. Args can be a
 commit ID, branch name, HEAD, or any other kind of revision reference.
 </p>
 </div>
 </li>
-<li><a id="sec-1-1-1-7-8" name="sec-1-1-1-7-8"></a>git log &#x2013; &lt;file&gt;<br  /><div class="outline-text-6" id="text-1-1-1-7-8">
+<li><a id="org7ed6256"></a>git log &#x2013; &lt;file&gt;<br />
+<div class="outline-text-6" id="text-3-1-1-7-8">
 <p>
 Only display commits that have the specified file.
 </p>
 </div>
 </li>
-<li><a id="sec-1-1-1-7-9" name="sec-1-1-1-7-9"></a>git log &#x2013;graph &#x2013;decorate<br  /><div class="outline-text-6" id="text-1-1-1-7-9">
+<li><a id="orgff5fd34"></a>git log &#x2013;graph &#x2013;decorate<br />
+<div class="outline-text-6" id="text-3-1-1-7-9">
 <p>
 &#x2013;graph flag draws a text based graph of commits on left side of commit
 msgs. &#x2013;decorate adds names of branches or tags of commits shown.
 </p>
 </div>
-</li></ol>
 </li>
-<li><a id="sec-1-1-1-8" name="sec-1-1-1-8"></a>git diff<br  /><div class="outline-text-5" id="text-1-1-1-8">
+</ol>
+</li>
+<li><a id="org28c4a62"></a>git diff<br />
+<div class="outline-text-5" id="text-3-1-1-8">
 <p>
 Show unstaged changes between your index and working directory.
 </p>
 </div>
-<ol class="org-ol"><li><a id="sec-1-1-1-8-1" name="sec-1-1-1-8-1"></a>git diff HEAD<br  /><div class="outline-text-6" id="text-1-1-1-8-1">
+<ol class="org-ol">
+<li><a id="org07a347e"></a>git diff HEAD<br />
+<div class="outline-text-6" id="text-3-1-1-8-1">
 <p>
 Show difference between working directory and last commit.
 </p>
 </div>
 </li>
-<li><a id="sec-1-1-1-8-2" name="sec-1-1-1-8-2"></a>git diff &#x2013;cached<br  /><div class="outline-text-6" id="text-1-1-1-8-2">
+<li><a id="org711cf69"></a>git diff &#x2013;cached<br />
+<div class="outline-text-6" id="text-3-1-1-8-2">
 <p>
 Show difference between staged changes and last commit.
 </p>
 </div>
-</li></ol>
-</li></ol>
+</li>
+</ol>
+</li>
+</ol>
 </div>
-<div id="outline-container-sec-1-1-2" class="outline-4">
-<h4 id="sec-1-1-2"><span class="section-number-4">1.1.2</span> Undoing Changes</h4>
-<div class="outline-text-4" id="text-1-1-2">
-</div><ol class="org-ol"><li><a id="sec-1-1-2-1" name="sec-1-1-2-1"></a>git revert &lt;commit&gt;<br  /><div class="outline-text-5" id="text-1-1-2-1">
+<div id="outline-container-org4db7f68" class="outline-4">
+<h4 id="org4db7f68"><span class="section-number-4">3.1.2</span> Undoing Changes</h4>
+<div class="outline-text-4" id="text-3-1-2">
+</div>
+<ol class="org-ol">
+<li><a id="org8c2ae1a"></a>git revert &lt;commit&gt;<br />
+<div class="outline-text-5" id="text-3-1-2-1">
 <p>
 Create new commit that undoes all of the changes made in
 &lt;commit&gt;, then apply it to the current branch.
 </p>
 </div>
 </li>
-<li><a id="sec-1-1-2-2" name="sec-1-1-2-2"></a>git reset<br  /><div class="outline-text-5" id="text-1-1-2-2">
+<li><a id="org776b77d"></a>git reset<br />
+<div class="outline-text-5" id="text-3-1-2-2">
 <p>
 Reset staging area to match most recent commit, but leave the
 working directory unchanged.
 </p>
 </div>
-<ol class="org-ol"><li><a id="sec-1-1-2-2-1" name="sec-1-1-2-2-1"></a>git reset &lt;file&gt;<br  /><div class="outline-text-6" id="text-1-1-2-2-1">
+<ol class="org-ol">
+<li><a id="org5a3c1a7"></a>git reset &lt;file&gt;<br />
+<div class="outline-text-6" id="text-3-1-2-2-1">
 <p>
 Remove &lt;file&gt; from the staging area, but leave the working directory
 unchanged. This unstages a file without overwriting any changes.
 </p>
 </div>
 </li>
-<li><a id="sec-1-1-2-2-2" name="sec-1-1-2-2-2"></a>git reset &#x2013;hard<br  /><div class="outline-text-6" id="text-1-1-2-2-2">
+<li><a id="org13eb2df"></a>git reset &#x2013;hard<br />
+<div class="outline-text-6" id="text-3-1-2-2-2">
 <p>
 Reset staging area and working directory to match most recent
 commit and overwrites all changes in the working directory.
 </p>
 </div>
 </li>
-<li><a id="sec-1-1-2-2-3" name="sec-1-1-2-2-3"></a>git reset &lt;commit&gt;<br  /><div class="outline-text-6" id="text-1-1-2-2-3">
+<li><a id="org41e5ba4"></a>git reset &lt;commit&gt;<br />
+<div class="outline-text-6" id="text-3-1-2-2-3">
 <p>
 Move the current branch tip backward to &lt;commit&gt;, reset the
 staging area to match, but leave the working directory alone.
 </p>
 </div>
 </li>
-<li><a id="sec-1-1-2-2-4" name="sec-1-1-2-2-4"></a>git reset &#x2013;hard &lt;commit&gt;<br  /><div class="outline-text-6" id="text-1-1-2-2-4">
+<li><a id="org4fd8bfc"></a>git reset &#x2013;hard &lt;commit&gt;<br />
+<div class="outline-text-6" id="text-3-1-2-2-4">
 <p>
 Move the current branch tip backward to &lt;commit&gt;, reset the
 staging area to match, resets both the staging area &amp; working directory to
 match. Deletes uncommitted changes, and all commits after &lt;commit&gt;.
 </p>
 </div>
-</li></ol>
 </li>
-<li><a id="sec-1-1-2-3" name="sec-1-1-2-3"></a>git clean -n<br  /><div class="outline-text-5" id="text-1-1-2-3">
+</ol>
+</li>
+<li><a id="org56c711a"></a>git clean -n<br />
+<div class="outline-text-5" id="text-3-1-2-3">
 <p>
 Shows which files would be removed from working directory. Use
 the -f flag in place of the -n flag to execute the clean.
 </p>
 </div>
-</li></ol>
+</li>
+</ol>
 </div>
-<div id="outline-container-sec-1-1-3" class="outline-4">
-<h4 id="sec-1-1-3"><span class="section-number-4">1.1.3</span> Rewriting Git History</h4>
-<div class="outline-text-4" id="text-1-1-3">
-</div><ol class="org-ol"><li><a id="sec-1-1-3-1" name="sec-1-1-3-1"></a>git commit &#x2013;amend<br  /><div class="outline-text-5" id="text-1-1-3-1">
+<div id="outline-container-orgf1623e8" class="outline-4">
+<h4 id="orgf1623e8"><span class="section-number-4">3.1.3</span> Rewriting Git History</h4>
+<div class="outline-text-4" id="text-3-1-3">
+</div>
+<ol class="org-ol">
+<li><a id="org817af77"></a>git commit &#x2013;amend<br />
+<div class="outline-text-5" id="text-3-1-3-1">
 <p>
 Replace the last commit with the staged changes and last commit
 combined. Use with nothing staged to edit the last commit’s message.
 </p>
 </div>
 </li>
-<li><a id="sec-1-1-3-2" name="sec-1-1-3-2"></a>git rebase &lt;base&gt;<br  /><div class="outline-text-5" id="text-1-1-3-2">
+<li><a id="org64c2ebd"></a>git rebase &lt;base&gt;<br />
+<div class="outline-text-5" id="text-3-1-3-2">
 <p>
 Rebase the current branch onto &lt;base&gt;. &lt;base&gt; can be a commit ID,
 a branch name, a tag, or a relative reference to HEAD.
 </p>
 </div>
-<ol class="org-ol"><li><a id="sec-1-1-3-2-1" name="sec-1-1-3-2-1"></a>git rebase -i &lt;base&gt;<br  /><div class="outline-text-6" id="text-1-1-3-2-1">
+<ol class="org-ol">
+<li><a id="orgfed241b"></a>git rebase -i &lt;base&gt;<br />
+<div class="outline-text-6" id="text-3-1-3-2-1">
 <p>
 Interactively rebase current branch onto &lt;base&gt;. Launches editor to enter
 commands for how each commit will be transferred to the new base.
 </p>
 </div>
-</li></ol>
 </li>
-<li><a id="sec-1-1-3-3" name="sec-1-1-3-3"></a>git reflog<br  /><div class="outline-text-5" id="text-1-1-3-3">
+</ol>
+</li>
+<li><a id="org1aa0a2c"></a>git reflog<br />
+<div class="outline-text-5" id="text-3-1-3-3">
 <p>
 Show a log of changes to the local repository’s HEAD. Add
 &#x2013;relative-date flag to show date info or &#x2013;all to show all refs
 </p>
 </div>
-</li></ol>
+</li>
+</ol>
 </div>
-<div id="outline-container-sec-1-1-4" class="outline-4">
-<h4 id="sec-1-1-4"><span class="section-number-4">1.1.4</span> Git Branches</h4>
-<div class="outline-text-4" id="text-1-1-4">
-</div><ol class="org-ol"><li><a id="sec-1-1-4-1" name="sec-1-1-4-1"></a>git branch<br  /><div class="outline-text-5" id="text-1-1-4-1">
+<div id="outline-container-org5959930" class="outline-4">
+<h4 id="org5959930"><span class="section-number-4">3.1.4</span> Git Branches</h4>
+<div class="outline-text-4" id="text-3-1-4">
+</div>
+<ol class="org-ol">
+<li><a id="orgebdcfde"></a>git branch<br />
+<div class="outline-text-5" id="text-3-1-4-1">
 <p>
 List all of the branches in your repo. Add a &lt;branch&gt; argument to
 create a new branch with the name &lt;branch&gt;.
 </p>
 </div>
 </li>
-<li><a id="sec-1-1-4-2" name="sec-1-1-4-2"></a>git checkout -b &lt;branch&gt;<br  /><div class="outline-text-5" id="text-1-1-4-2">
+<li><a id="org4117b72"></a>git checkout -b &lt;branch&gt;<br />
+<div class="outline-text-5" id="text-3-1-4-2">
 <p>
 Create and check out a new branch named &lt;branch&gt;. Drop the -b
 flag to checkout an existing branch.
 </p>
 </div>
 </li>
-<li><a id="sec-1-1-4-3" name="sec-1-1-4-3"></a>git merge &lt;branch&gt;<br  /><div class="outline-text-5" id="text-1-1-4-3">
+<li><a id="org75aa52d"></a>git merge &lt;branch&gt;<br />
+<div class="outline-text-5" id="text-3-1-4-3">
 <p>
 Merge &lt;branch&gt; into the current branch.
 </p>
 </div>
-</li></ol>
+</li>
+</ol>
 </div>
-<div id="outline-container-sec-1-1-5" class="outline-4">
-<h4 id="sec-1-1-5"><span class="section-number-4">1.1.5</span> Remote Repositories</h4>
-<div class="outline-text-4" id="text-1-1-5">
-</div><ol class="org-ol"><li><a id="sec-1-1-5-1" name="sec-1-1-5-1"></a>git remote add &lt;name&gt; &lt;url&gt;<br  /><div class="outline-text-5" id="text-1-1-5-1">
+<div id="outline-container-org58e608b" class="outline-4">
+<h4 id="org58e608b"><span class="section-number-4">3.1.5</span> Remote Repositories</h4>
+<div class="outline-text-4" id="text-3-1-5">
+</div>
+<ol class="org-ol">
+<li><a id="org3c03afb"></a>git remote add &lt;name&gt; &lt;url&gt;<br />
+<div class="outline-text-5" id="text-3-1-5-1">
 <p>
 Create a new connection to a remote repo. After adding a remote,
 you can use &lt;name&gt; as a shortcut for &lt;url&gt; in other commands.
 </p>
 </div>
 </li>
-<li><a id="sec-1-1-5-2" name="sec-1-1-5-2"></a>git fetch &lt;remote&gt; &lt;branch&gt;<br  /><div class="outline-text-5" id="text-1-1-5-2">
+<li><a id="org11aab0c"></a>git fetch &lt;remote&gt; &lt;branch&gt;<br />
+<div class="outline-text-5" id="text-3-1-5-2">
 <p>
 Fetches a specific &lt;branch&gt;, from the repo. Leave off &lt;branch&gt; to
 fetch all remote refs.
 </p>
 </div>
 </li>
-<li><a id="sec-1-1-5-3" name="sec-1-1-5-3"></a>git pull &lt;remote&gt;<br  /><div class="outline-text-5" id="text-1-1-5-3">
+<li><a id="orgf73c35d"></a>git pull &lt;remote&gt;<br />
+<div class="outline-text-5" id="text-3-1-5-3">
 <p>
 Fetch the specified remote’s copy of current branch and immediately
 merge it into the local copy.
 </p>
 </div>
-<ol class="org-ol"><li><a id="sec-1-1-5-3-1" name="sec-1-1-5-3-1"></a>git pull &#x2013;rebase &lt;remote&gt;<br  /><div class="outline-text-6" id="text-1-1-5-3-1">
+<ol class="org-ol">
+<li><a id="org4a91990"></a>git pull &#x2013;rebase &lt;remote&gt;<br />
+<div class="outline-text-6" id="text-3-1-5-3-1">
 <p>
 Fetch the remote’s copy of current branch and rebases it into the local
 copy. Uses git rebase instead of merge to integrate the branches.
 </p>
 </div>
-</li></ol>
 </li>
-<li><a id="sec-1-1-5-4" name="sec-1-1-5-4"></a>git push &lt;remote&gt; &lt;branch&gt;<br  /><div class="outline-text-5" id="text-1-1-5-4">
+</ol>
+</li>
+<li><a id="orgf6a5695"></a>git push &lt;remote&gt; &lt;branch&gt;<br />
+<div class="outline-text-5" id="text-3-1-5-4">
 <p>
 Push the branch to &lt;remote&gt;, along with necessary commits and
 objects. Creates named branch in the remote repo if it doesn’t exist.
 </p>
 </div>
-<ol class="org-ol"><li><a id="sec-1-1-5-4-1" name="sec-1-1-5-4-1"></a>git push &lt;remote&gt; &#x2013;force<br  /><div class="outline-text-6" id="text-1-1-5-4-1">
+<ol class="org-ol">
+<li><a id="orgac8c3f6"></a>git push &lt;remote&gt; &#x2013;force<br />
+<div class="outline-text-6" id="text-3-1-5-4-1">
 <p>
 Forces the git push even if it results in a non-fast-forward merge. Do not use
 the &#x2013;force flag unless you’re absolutely sure you know what you’re doing.
 </p>
 </div>
 </li>
-<li><a id="sec-1-1-5-4-2" name="sec-1-1-5-4-2"></a>git push &lt;remote&gt; &#x2013;all<br  /><div class="outline-text-6" id="text-1-1-5-4-2">
+<li><a id="orga2aff7b"></a>git push &lt;remote&gt; &#x2013;all<br />
+<div class="outline-text-6" id="text-3-1-5-4-2">
 <p>
 Push all of your local branches to the specified remote.
 </p>
 </div>
 </li>
-<li><a id="sec-1-1-5-4-3" name="sec-1-1-5-4-3"></a>git push &lt;remote&gt; &#x2013;tags<br  /><div class="outline-text-6" id="text-1-1-5-4-3">
+<li><a id="orgcb3947a"></a>git push &lt;remote&gt; &#x2013;tags<br />
+<div class="outline-text-6" id="text-3-1-5-4-3">
 <p>
 Tags aren’t automatically pushed when you push a branch or use the
 &#x2013;all flag. The &#x2013;tags flag sends all of your local tags to the remote repo
 </p>
 </div>
-</li></ol>
-</li></ol>
+</li>
+</ol>
+</li>
+</ol>
 </div>
 </div>
-<div id="outline-container-sec-1-2" class="outline-3">
-<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Install Git</h3>
-<div class="outline-text-3" id="text-1-2">
-</div><div id="outline-container-sec-1-2-1" class="outline-4">
-<h4 id="sec-1-2-1"><span class="section-number-4">1.2.1</span> Install Git on Linux</h4>
-<div class="outline-text-4" id="text-1-2-1">
-</div><ol class="org-ol"><li><a id="sec-1-2-1-1" name="sec-1-2-1-1"></a>Debian / Ubuntu (apt-get)<br  /><div class="outline-text-5" id="text-1-2-1-1">
+<div id="outline-container-org795503d" class="outline-3">
+<h3 id="org795503d"><span class="section-number-3">3.2</span> Install Git</h3>
+<div class="outline-text-3" id="text-3-2">
+</div>
+<div id="outline-container-orgd341944" class="outline-4">
+<h4 id="orgd341944"><span class="section-number-4">3.2.1</span> Install Git on Linux</h4>
+<div class="outline-text-4" id="text-3-2-1">
+</div>
+<ol class="org-ol">
+<li><a id="orgf5e542b"></a>Debian / Ubuntu (apt-get)<br />
+<div class="outline-text-5" id="text-3-2-1-1">
 <p>
 Git packages are available via apt:
 </p>
 
 <ol class="org-ol">
-<li>From your shell, install Git using apt-get:
+<li><p>
+From your shell, install Git using apt-get:
+</p>
 <pre class="example">
 $ sudo apt-get update
 $ sudo apt-get install git
-</pre>
-</li>
+</pre></li>
 
-<li>Verify the installation was successful by typing git &#x2013;version:
+<li><p>
+Verify the installation was successful by typing git &#x2013;version:
+</p>
 <pre class="example">
 $ git --version
   git version 2.9.2
-</pre>
-</li>
+</pre></li>
 
-<li>Configure your Git username and email using the following commands, replacing Emma's name with your own. These details will be associated with any commits that you create:
+<li><p>
+Configure your Git username and email using the following commands, replacing Emma's name with your own. These details will be associated with any commits that you create:
+</p>
 <pre class="example">
 $ git config --global user.name "Emma Paris"
 $ git config --global user.email "eparis@example.com"
-</pre>
-</li>
+</pre></li>
 </ol>
 </div>
 </li>
 
-<li><a id="sec-1-2-1-2" name="sec-1-2-1-2"></a><span class="todo TODO">TODO</span> Arch<br  /></li>
-<li><a id="sec-1-2-1-3" name="sec-1-2-1-3"></a>Fedora (dnf/yum)<br  /><div class="outline-text-5" id="text-1-2-1-3">
+<li><a id="orgf67e254"></a><span class="todo TODO">TODO</span> Arch<br /></li>
+<li><a id="orgdcf9cb7"></a>Fedora (dnf/yum)<br />
+<div class="outline-text-5" id="text-3-2-1-3">
 <p>
 Git packages are available via both yum and dnf:
 </p>
 
 <ol class="org-ol">
-<li>From your shell, install Git using dnf (or yum, on older versions of Fedora):
+<li><p>
+From your shell, install Git using dnf (or yum, on older versions of Fedora):
+</p>
 <pre class="example">
 $ sudo dnf install git
 </pre>
@@ -585,45 +1062,47 @@ or
 
 <pre class="example">
 $ sudo yum install git
-</pre>
-</li>
+</pre></li>
 
-<li>Verify the installation was successful by typing git &#x2013;version:
+<li><p>
+Verify the installation was successful by typing git &#x2013;version:
+</p>
 <pre class="example">
 $git --version
  git version 2.9.2
-</pre>
-</li>
+</pre></li>
 
-<li>Configure your Git username and email using the following commands, replacing Emma's name with your own. These details will be associated with any commits that you create:
+<li><p>
+Configure your Git username and email using the following commands, replacing Emma's name with your own. These details will be associated with any commits that you create:
+</p>
 <pre class="example">
 $ git config --global user.name "Emma Paris"
 $ git config --global user.email "eparis@example.com"
-</pre>
-</li>
+</pre></li>
 </ol>
 </div>
 </li>
-<li><a id="sec-1-2-1-4" name="sec-1-2-1-4"></a><span class="todo TODO">TODO</span> Build Git from source on Linux<br  /></li></ol>
+<li><a id="org0a48998"></a><span class="todo TODO">TODO</span> Build Git from source on Linux<br /></li>
+</ol>
 </div>
-<div id="outline-container-sec-1-2-2" class="outline-4">
-<h4 id="sec-1-2-2"><span class="section-number-4">1.2.2</span> <span class="todo TODO">TODO</span> Install Git on Windows</h4>
+<div id="outline-container-org45fe192" class="outline-4">
+<h4 id="org45fe192"><span class="section-number-4">3.2.2</span> <span class="todo TODO">TODO</span> Install Git on Windows</h4>
 </div>
-<div id="outline-container-sec-1-2-3" class="outline-4">
-<h4 id="sec-1-2-3"><span class="section-number-4">1.2.3</span> <span class="todo TODO">TODO</span> Install Git on Mac</h4>
+<div id="outline-container-org94a2692" class="outline-4">
+<h4 id="org94a2692"><span class="section-number-4">3.2.3</span> <span class="todo TODO">TODO</span> Install Git on Mac</h4>
 </div>
 </div>
-<div id="outline-container-sec-1-3" class="outline-3">
-<h3 id="sec-1-3"><span class="section-number-3">1.3</span> What is Git?</h3>
-<div class="outline-text-3" id="text-1-3">
+<div id="outline-container-org43a04f5" class="outline-3">
+<h3 id="org43a04f5"><span class="section-number-3">3.3</span> What is Git?</h3>
+<div class="outline-text-3" id="text-3-3">
 <p>
 Git is a mature, actively maintained open source project originally developed in 2005 by Linus Torvalds, the famous creator of the Linux operating system kernel. Having a distributed architecture, Git is an example of DVCS (hence Distributed Version Control System). Rather than have only one single place for the full version history of the software as is common in once-popular version control systems like CVS or Subversion (also known as SVN), in Git, every developer's working copy of the code is also a repository that can contain the full history of all changes.
 </p>
 </div>
 
-<div id="outline-container-sec-1-3-1" class="outline-4">
-<h4 id="sec-1-3-1"><span class="section-number-4">1.3.1</span> Performance</h4>
-<div class="outline-text-4" id="text-1-3-1">
+<div id="outline-container-org6181231" class="outline-4">
+<h4 id="org6181231"><span class="section-number-4">3.3.1</span> Performance</h4>
+<div class="outline-text-4" id="text-3-3-1">
 <p>
 The raw performance characteristics of Git are very strong when compared to many alternatives. The algorithm implemented inside Git take advantage of deep knowledge about common attributes of real source code file trees, how they are usually modified over time and what the access patterns are. Git is not fooled by the names of the files when determining what the storage and version history of the file tree should be, instead, Git focuses on the file content itself. After all, source code files are frequently renamed, split, an rearranged. The object format of Git's repository files uses a combination of delta encoding (storing content differences), compression and explicitly stores directory contents and version metadata objects.
 </p>
@@ -634,18 +1113,18 @@ Being distributed enables significant performance benefits as well.
 </div>
 </div>
 
-<div id="outline-container-sec-1-3-2" class="outline-4">
-<h4 id="sec-1-3-2"><span class="section-number-4">1.3.2</span> Security</h4>
-<div class="outline-text-4" id="text-1-3-2">
+<div id="outline-container-orga522d18" class="outline-4">
+<h4 id="orga522d18"><span class="section-number-4">3.3.2</span> Security</h4>
+<div class="outline-text-4" id="text-3-3-2">
 <p>
 Git has been designed with the integrity of managed source code as a top priority. The content of the files a well as the true relationships between files and directories, versions, tags and commits, all of these object in the Git repository are secured with a cryptographically secure hashing algorithm called SHA1. This protect the code and the change history against both accidental and malicious change and ensures that the history is fully traceable.
 </p>
 </div>
 </div>
 
-<div id="outline-container-sec-1-3-3" class="outline-4">
-<h4 id="sec-1-3-3"><span class="section-number-4">1.3.3</span> Flexibility</h4>
-<div class="outline-text-4" id="text-1-3-3">
+<div id="outline-container-orgf4d6df9" class="outline-4">
+<h4 id="orgf4d6df9"><span class="section-number-4">3.3.3</span> Flexibility</h4>
+<div class="outline-text-4" id="text-3-3-3">
 <p>
 One of Git's key design objectives is flexibility. Git is flexible in several respects: in support for various kinds of nonlinear development workflows, in its efficiency in both small and large projects and in it compatibility with many existing systems and protocols.
 </p>
@@ -656,60 +1135,65 @@ Git has been designed to support branching and tagging as first-class citizens (
 </div>
 </div>
 
-<div id="outline-container-sec-1-3-4" class="outline-4">
-<h4 id="sec-1-3-4"><span class="section-number-4">1.3.4</span> Version control with Git</h4>
-<div class="outline-text-4" id="text-1-3-4">
-</div><ol class="org-ol"><li><a id="sec-1-3-4-1" name="sec-1-3-4-1"></a>Git is good<br  /><div class="outline-text-5" id="text-1-3-4-1">
+<div id="outline-container-org5a9d7c0" class="outline-4">
+<h4 id="org5a9d7c0"><span class="section-number-4">3.3.4</span> Version control with Git</h4>
+<div class="outline-text-4" id="text-3-3-4">
+</div>
+<ol class="org-ol">
+<li><a id="orgd0ac873"></a>Git is good<br />
+<div class="outline-text-5" id="text-3-3-4-1">
 <p>
 Git has the functionality, performance, security and flexibility that most teams and individual developer need.
 </p>
 </div>
 </li>
 
-<li><a id="sec-1-3-4-2" name="sec-1-3-4-2"></a>Git is de facto standard<br  /><div class="outline-text-5" id="text-1-3-4-2">
+<li><a id="org4dee893"></a>Git is de facto standard<br />
+<div class="outline-text-5" id="text-3-3-4-2">
 <p>
 Git is the most broadly adopted tool of its kind. Vast numbers of developers already have Git experience and a significant proportion of college graduates may have experience with only Git. In addition to the benefits of a large talent pool, the predominance of Git also means that many third party software tools and services are already integrated with Git including IDEs.
 </p>
 </div>
 </li>
 
-<li><a id="sec-1-3-4-3" name="sec-1-3-4-3"></a>Git is a quality open source project<br  /><div class="outline-text-5" id="text-1-3-4-3">
+<li><a id="org6bf6b6a"></a>Git is a quality open source project<br />
+<div class="outline-text-5" id="text-3-3-4-3">
 <p>
 Git is a very well supported open source project with over a decade of solid stewardship. Git enjoys great community support and a vast user base. Documentation is excellent and plentiful, including books, tutorial and dedicated web sites.
 </p>
 </div>
 </li>
 
-<li><a id="sec-1-3-4-4" name="sec-1-3-4-4"></a>Criticism of Git<br  /><div class="outline-text-5" id="text-1-3-4-4">
+<li><a id="org6ce8fd6"></a>Criticism of Git<br />
+<div class="outline-text-5" id="text-3-3-4-4">
 <p>
 One common criticism of Git is that it can be difficult to learn. Some of the terminology in Git will be novel to newcomers and for users of other systems, the Git terminology may be different, for example, revert in Git has a different meaning than in SVN or CVS. Nevertheless, Git is very capable and provides a lot of power to its users.
 </p>
 </div>
-</li></ol>
+</li>
+</ol>
 </div>
 </div>
-<div id="outline-container-sec-1-4" class="outline-3">
-<h3 id="sec-1-4"><span class="section-number-3">1.4</span> Concepts and Benefits</h3>
-<div class="outline-text-3" id="text-1-4">
+<div id="outline-container-org9d734f3" class="outline-3">
+<h3 id="org9d734f3"><span class="section-number-3">3.4</span> Concepts and Benefits</h3>
+<div class="outline-text-3" id="text-3-4">
 <p>
 Category of software tools that help a software team manage changes of source code over time. Keeps track of every modification to the code in a special kind of database. Version control protects source code from both catastrophe and the casual degradation of human error and unintended consequences.
 </p>
 <ul class="org-ul">
-<li>A complete long-term change history of every file. This means every change made by many individuals over the years. Changes include the creation and deletion of files as well as edits to their contents.
-</li>
-<li>Branching and merging. Having team members work concurrently is a no-brainer, but even individuals working on their own can benefit from the ability to work on independent streams of changes. Creating a "branch" in VC tools keeps multiple streams of work independent from each other while also providing the facility to merge that work back together, enabling developers to verify that the changes on each branch do not conflict.
-</li>
-<li>Traceability. Being able to trace each change made to the software and connect it to project management an bug tracking software such as Jira, and being able to annotate each change with a message describing the purpose and intent of the change can help not only with root cause analysis and other forensics. Having the annotated history of the code at your fingertips when you are reading the code, trying to understand what it is doing and why it is so designed can enable developers to make correct and harmonious changes that are in accord with the intended long-term design of the system. This can be especially important for working effectively with legacy code and is crucial in enabling developers to estimate future work with an accuracy.
-</li>
+<li>A complete long-term change history of every file. This means every change made by many individuals over the years. Changes include the creation and deletion of files as well as edits to their contents.</li>
+<li>Branching and merging. Having team members work concurrently is a no-brainer, but even individuals working on their own can benefit from the ability to work on independent streams of changes. Creating a "branch" in VC tools keeps multiple streams of work independent from each other while also providing the facility to merge that work back together, enabling developers to verify that the changes on each branch do not conflict.</li>
+<li>Traceability. Being able to trace each change made to the software and connect it to project management an bug tracking software such as Jira, and being able to annotate each change with a message describing the purpose and intent of the change can help not only with root cause analysis and other forensics. Having the annotated history of the code at your fingertips when you are reading the code, trying to understand what it is doing and why it is so designed can enable developers to make correct and harmonious changes that are in accord with the intended long-term design of the system. This can be especially important for working effectively with legacy code and is crucial in enabling developers to estimate future work with an accuracy.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-sec-1-5" class="outline-3">
-<h3 id="sec-1-5"><span class="section-number-3">1.5</span> Git for developers</h3>
-<div class="outline-text-3" id="text-1-5">
-</div><div id="outline-container-sec-1-5-1" class="outline-4">
-<h4 id="sec-1-5-1"><span class="section-number-4">1.5.1</span> Feature Branch Workflow</h4>
-<div class="outline-text-4" id="text-1-5-1">
+<div id="outline-container-org5f02437" class="outline-3">
+<h3 id="org5f02437"><span class="section-number-3">3.5</span> Git for developers</h3>
+<div class="outline-text-3" id="text-3-5">
+</div>
+<div id="outline-container-org3f11223" class="outline-4">
+<h4 id="org3f11223"><span class="section-number-4">3.5.1</span> Feature Branch Workflow</h4>
+<div class="outline-text-4" id="text-3-5-1">
 <p>
 One of the biggest advantages of Git is its branching capabilities. Unlike centralized version control systems, Git branches are cheap and easy to merge. This facilitates the feature branch workflow popular with many Git users.
 </p>
@@ -730,9 +1214,9 @@ Using feature branches is not only more reliable than directly editing productio
 </div>
 </div>
 
-<div id="outline-container-sec-1-5-2" class="outline-4">
-<h4 id="sec-1-5-2"><span class="section-number-4">1.5.2</span> Distributed Development</h4>
-<div class="outline-text-4" id="text-1-5-2">
+<div id="outline-container-org0b05175" class="outline-4">
+<h4 id="org0b05175"><span class="section-number-4">3.5.2</span> Distributed Development</h4>
+<div class="outline-text-4" id="text-3-5-2">
 <p>
 In SVN, each developer gets a working copy that points back to a single central repository. Git, however, is  distributed version control system. Instead of a working copy, each developer gets their own local repository complete with a full history of commits.
 </p>
@@ -756,9 +1240,9 @@ And, similar to feature branches, distributed development creates a more reliabl
 </p>
 </div>
 </div>
-<div id="outline-container-sec-1-5-3" class="outline-4">
-<h4 id="sec-1-5-3"><span class="section-number-4">1.5.3</span> Pull Requests</h4>
-<div class="outline-text-4" id="text-1-5-3">
+<div id="outline-container-orga4d743e" class="outline-4">
+<h4 id="orga4d743e"><span class="section-number-4">3.5.3</span> Pull Requests</h4>
+<div class="outline-text-4" id="text-3-5-3">
 <p>
 Many source code management tools such as GitHub or Bitbucket enhance core Git functionality with pull requests. A pull request is a way to ask another developer to merge one of your branches into their repository. This not only makes it easier for project leads to keep track of changes, but also lets developers initiate discussions around their work before integrating it with the rest of the codebase.
 </p>
@@ -775,22 +1259,224 @@ Since they're essentially a comment thread attached to a feature branch, pull re
 </div>
 </div>
 </div>
+<div id="outline-container-org1c2b56e" class="outline-3">
+<h3 id="org1c2b56e"><span class="section-number-3">3.6</span> Resources</h3>
+<div class="outline-text-3" id="text-3-6">
 </div>
-<div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> Java&#xa0;&#xa0;&#xa0;<span class="tag"><span class="java">java</span></span></h2>
-<div class="outline-text-2" id="text-2">
-</div><div id="outline-container-sec-2-1" class="outline-3">
-<h3 id="sec-2-1"><span class="section-number-3">2.1</span> Spring&#xa0;&#xa0;&#xa0;<span class="tag"><span class="spring">spring</span></span></h3>
-<div class="outline-text-3" id="text-2-1">
-</div><div id="outline-container-sec-2-1-1" class="outline-4">
-<h4 id="sec-2-1-1"><span class="section-number-4">2.1.1</span> Dependency Injection&#xa0;&#xa0;&#xa0;<span class="tag"><span class="di">di</span></span></h4>
+<div id="outline-container-orgbcb5132" class="outline-4">
+<h4 id="orgbcb5132"><span class="section-number-4">3.6.1</span> Books</h4>
+</div>
+<div id="outline-container-orgfc3a429" class="outline-4">
+<h4 id="orgfc3a429"><span class="section-number-4">3.6.2</span> Links</h4>
+<div class="outline-text-4" id="text-3-6-2">
+</div>
+<ol class="org-ol">
+<li><a id="org6f8c213"></a><a href="https://try.github.io/">try github</a><br /></li>
+<li><a id="orgda83948"></a><a href="https://www.atlassian.com/git/tutorials/">atlassian tutorials</a><br /></li>
+<li><a id="org0c80a5b"></a><a href="https://about.gitlab.com/">about gitlab</a><br /></li>
+<li><a id="org5b2430b"></a><a href="https://www.youtube.com/watch?v=mql6bmoysiq">youtube</a><br /></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org1e99dff" class="outline-2">
+<h2 id="org1e99dff"><span class="section-number-2">4</span> Java&#xa0;&#xa0;&#xa0;<span class="tag"><span class="java">java</span></span></h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-orga6696c6" class="outline-3">
+<h3 id="orga6696c6"><span class="section-number-3">4.1</span> Core&#xa0;&#xa0;&#xa0;<span class="tag"><span class="core">core</span></span></h3>
+<div class="outline-text-3" id="text-4-1">
+</div>
+<div id="outline-container-org9df70e6" class="outline-4">
+<h4 id="org9df70e6"><span class="section-number-4">4.1.1</span> Resources</h4>
+<div class="outline-text-4" id="text-4-1-1">
+</div>
+<ol class="org-ol">
+<li><a id="orgfd674ba"></a>Books<br />
+<ol class="org-ol">
+<li><a id="orgfdb7854"></a><a href="../notes/pdf/effectivejava2ndedition.pdf::1">Effective Java, Second Edition</a><br /></li>
+</ol>
+</li>
+<li><a id="org5884b1d"></a>Links<br />
+<ol class="org-ol">
+<li><a id="org014e27e"></a>Udemy Complete Java Masterclass<br /></li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgb4a44c6" class="outline-3">
+<h3 id="orgb4a44c6"><span class="section-number-3">4.2</span> Spring&#xa0;&#xa0;&#xa0;<span class="tag"><span class="spring">spring</span></span></h3>
+<div class="outline-text-3" id="text-4-2">
+</div>
+<div id="outline-container-orgae20d76" class="outline-4">
+<h4 id="orgae20d76"><span class="section-number-4">4.2.1</span> Dependency injection&#xa0;&#xa0;&#xa0;<span class="tag"><span class="di">di</span></span></h4>
+<div class="outline-text-4" id="text-4-2-1">
+</div>
+<ol class="org-ol">
+<li><a id="org9984ea8"></a><a href="https://en.wikipedia.org/wiki/dependency_injection">wiki</a><br /></li>
+<li><a id="org06850ed"></a><a href="http://www.theserverside.com/news/1321158/a-beginners-guide-to-dependency-injection">the serverside</a><br /></li>
+<li><a id="org7be9937"></a><a href="http://www.vogella.com/tutorials/dependencyinjection/article.html">vogella</a><br /></li>
+</ol>
+</div>
+<div id="outline-container-orgcaf68dd" class="outline-4">
+<h4 id="orgcaf68dd"><span class="section-number-4">4.2.2</span> Resources</h4>
+<div class="outline-text-4" id="text-4-2-2">
+</div>
+<ol class="org-ol">
+<li><a id="org12ec144"></a>Books<br />
+<ol class="org-ol">
+<li><a id="org4e174b4"></a><a href="../notes/pdf/SpringInAction4thEdition.pdf::1">Spring in Action, 4th Edition</a><br /></li>
+</ol>
+</li>
+<li><a id="org3028905"></a>Links<br />
+<ol class="org-ol">
+<li><a id="org789b814"></a><a href="http://docs.spring.io/spring/docs/4.0.0.RELEASE/spring-framework-reference/htmlsingle/">Spring Docs</a><br /></li>
+<li><a id="org3efac26"></a><a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">Wiki - MVC</a><br /></li>
+<li><a id="org418ca3b"></a><a href="https://www.youtube.com/watch?v=GB8k2-Egfv0&amp;list=PLC97BDEFDCDD169D7">YouTube</a><br /></li>
+<li><a id="org309ce83"></a><a href="https://www.youtube.com/watch?v=rMLP-NEPgnM">YouTube - update</a><br /></li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org71099e1" class="outline-3">
+<h3 id="org71099e1"><span class="section-number-3">4.3</span> Maven&#xa0;&#xa0;&#xa0;<span class="tag"><span class="maven">maven</span></span></h3>
+<div class="outline-text-3" id="text-4-3">
+</div>
+<div id="outline-container-org797fdf8" class="outline-4">
+<h4 id="org797fdf8"><span class="section-number-4">4.3.1</span> Resources</h4>
+<div class="outline-text-4" id="text-4-3-1">
+</div>
+<ol class="org-ol">
+<li><a id="org08241df"></a>Books<br />
+<ol class="org-ol">
+<li><a id="org2feab5b"></a><a href="../notes/pdf/ApacheMaven3Cookbook.pdf::1">Maven 3 Cookbook</a><br /></li>
+</ol>
+</li>
+<li><a id="org63e23da"></a>Links<br />
+<ol class="org-ol">
+<li><a id="org3747d6b"></a><a href="https://www.tutorialspoint.com/maven/index.htm">Tutorial Point</a><br /></li>
+<li><a id="org6c2f2fc"></a><a href="https://www.youtube.com/watch?v=0CFWeVgzsqY">YouTube</a><br /></li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orge05278b" class="outline-3">
+<h3 id="orge05278b"><span class="section-number-3">4.4</span> Alfresco&#xa0;&#xa0;&#xa0;<span class="tag"><span class="alfresco">alfresco</span></span></h3>
+<div class="outline-text-3" id="text-4-4">
+</div>
+<div id="outline-container-org0eb0fe1" class="outline-4">
+<h4 id="org0eb0fe1"><span class="section-number-4">4.4.1</span> Resources</h4>
+<div class="outline-text-4" id="text-4-4-1">
+</div>
+<ol class="org-ol">
+<li><a id="org5514019"></a>Books<br />
+<ol class="org-ol">
+<li><a id="org61ba5cc"></a><a href="../notes/pdf/ALFRESCO_ONE_5X_DEVELOPERS_GUIDE_SECOND_EDITION.pdf::23">Alfresco One 5.x Developer's Guide</a><br /></li>
+<li><a id="orge316102"></a><a href="../notes/pdf/EdgeROIDocumentManagement.pdf::1">Edge ROI Document Management</a><br /></li>
+<li><a id="org745eea0"></a><a href="../notes/pdf/ProfessionalAlfrescoPracticalSolutionsforEnterpriseContentManagement.pdf::1">Alfresco Practical Notes</a><br /></li>
+</ol>
+</li>
+<li><a id="org154607a"></a>Links<br /></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org8355217" class="outline-3">
+<h3 id="org8355217"><span class="section-number-3">4.5</span> Alfresco SDK&#xa0;&#xa0;&#xa0;<span class="tag"><span class="alfrescosdk">alfrescosdk</span></span></h3>
+<div class="outline-text-3" id="text-4-5">
+</div>
+<div id="outline-container-org305b390" class="outline-4">
+<h4 id="org305b390"><span class="section-number-4">4.5.1</span> Cheatsheet</h4>
+<div class="outline-text-4" id="text-4-5-1">
+</div>
+<ol class="org-ol">
+<li><a id="org715176c"></a>mvn clean install -Dmaven.test.skip=true<br />
+<div class="outline-text-5" id="text-4-5-1-1">
+<p>
+Skip tests while starting Alfresco SDK.
+</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-orgbc24da1" class="outline-2">
+<h2 id="orgbc24da1"><span class="section-number-2">5</span> JavaScript&#xa0;&#xa0;&#xa0;<span class="tag"><span class="javascript">javascript</span></span></h2>
+<div class="outline-text-2" id="text-5">
+</div>
+<div id="outline-container-orgeb8f31d" class="outline-3">
+<h3 id="orgeb8f31d"><span class="section-number-3">5.1</span> Resources</h3>
+<div class="outline-text-3" id="text-5-1">
+</div>
+<div id="outline-container-org91441f8" class="outline-4">
+<h4 id="org91441f8"><span class="section-number-4">5.1.1</span> Books</h4>
+<div class="outline-text-4" id="text-5-1-1">
+</div>
+<ol class="org-ol">
+<li><a id="org346922c"></a><a href="../notes/pdf/EffectiveJavaScript.pdf::1">Effective Javascript</a><br /></li>
+<li><a id="orge50f773"></a><a href="../notes/pdf/JavaScriptTheGoodParts.pdf::1">JavaScript The Good Parts</a><br /></li>
+<li><a id="orgca58fe3"></a><a href="../notes/pdf/EloquentJavaScript.pdf::1">Eloquent JavaScript</a><br /></li>
+<li><a id="orge8edda7"></a><a href="../notes/pdf/JSDivljiZapad.pdf::1">JS Divlji Zapd</a><br /></li>
+</ol>
+</div>
+<div id="outline-container-org93f31d4" class="outline-4">
+<h4 id="org93f31d4"><span class="section-number-4">5.1.2</span> Links</h4>
+<div class="outline-text-4" id="text-5-1-2">
+</div>
+<ol class="org-ol">
+<li><a id="orgcb37dfa"></a><a href="https://www.w3schools.com/js/js_json_intro.asp">w3schools - JSON</a>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="json">json</span></span><br /></li>
+<li><a id="org6d5931a"></a><a href="https://stackoverflow.com/questions/500431/what-is-the-scope-of-variables-in-javascript">Scope of Variables in JS - StackOverflow</a><br /></li>
+<li><a id="orgc37ff27"></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/block">Block scoping</a><br /></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-orgbbf1611" class="outline-2">
+<h2 id="orgbbf1611"><span class="section-number-2">6</span> HTML/CSS&#xa0;&#xa0;&#xa0;<span class="tag"><span class="html">html</span>&#xa0;<span class="css">css</span></span></h2>
+<div class="outline-text-2" id="text-6">
+</div>
+<div id="outline-container-org03cb01b" class="outline-3">
+<h3 id="org03cb01b"><span class="section-number-3">6.1</span> Tomcat&#xa0;&#xa0;&#xa0;<span class="tag"><span class="tomcat">tomcat</span></span></h3>
+<div class="outline-text-3" id="text-6-1">
+</div>
+<div id="outline-container-orge423e88" class="outline-4">
+<h4 id="orge423e88"><span class="section-number-4">6.1.1</span> <a href="http://www.vogella.com/tutorials/ApacheTomcat/article.html">Vogella Tutorial</a></h4>
+</div>
+</div>
+<div id="outline-container-org6dc0d59" class="outline-3">
+<h3 id="org6dc0d59"><span class="section-number-3">6.2</span> HTTP Methods&#xa0;&#xa0;&#xa0;<span class="tag"><span class="httpmethods">httpmethods</span></span></h3>
+<div class="outline-text-3" id="text-6-2">
+</div>
+<div id="outline-container-org3bb3ca6" class="outline-4">
+<h4 id="org3bb3ca6"><span class="section-number-4">6.2.1</span> <a href="https://restfulapi.net/http-methods/">RESTful API</a></h4>
+</div>
+<div id="outline-container-org2b1e2e0" class="outline-4">
+<h4 id="org2b1e2e0"><span class="section-number-4">6.2.2</span> <a href="https://www.w3schools.com/tags/ref_httpmethods.asp">w3schools</a></h4>
+</div>
+</div>
+<div id="outline-container-org61db01a" class="outline-3">
+<h3 id="org61db01a"><span class="section-number-3">6.3</span> Resources</h3>
+<div class="outline-text-3" id="text-6-3">
+</div>
+<div id="outline-container-org2fef34a" class="outline-4">
+<h4 id="org2fef34a"><span class="section-number-4">6.3.1</span> Books</h4>
+</div>
+<div id="outline-container-orgd1bac2b" class="outline-4">
+<h4 id="orgd1bac2b"><span class="section-number-4">6.3.2</span> Links</h4>
+<div class="outline-text-4" id="text-6-3-2">
+</div>
+<ol class="org-ol">
+<li><a id="org1d5a863"></a><a href="https://www.w3schools.com/">w3schools</a><br /></li>
+</ol>
 </div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2018-10-24 sre 14:29</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="date">Created: 2018-11-09 pet 08:52</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
