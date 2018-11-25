@@ -40,7 +40,8 @@ A set of software development tools that allows the creation of applications for
 ** [[https://softwareengineering.stackexchange.com/questions/101873/whats-the-difference-between-an-api-and-an-sdk][API vs SDK]]
 It rather falls along the lines of "All SDKs are/contain APIs but not all APIs are SDKs".
 
-An SDK seems to be a complete set of APIs that allow you to perform most any action you would need to for creating applications. In addition an SDK may include other tools for developing for the platform/item that it is for.
+An SDK seems to be
+a complete set of APIs that allow you to perform most any action you would need to for creating applicoations. In addition an SDK may include other tools for developing for the platform/item that it is for.
 
 An API on the other hand is just a series of related methods that may be good for a specific purpose.
 
@@ -342,7 +343,7 @@ An application protocol for distributed, collaborative, hypermedia information s
 ** Alfresco :alfresco:
 *** Resources
 **** Books
-***** [[pdfview:../notes/pdf/ALFRESCO_ONE_5X_DEVELOPERS_GUIDE_SECOND_EDITION.pdf::23][Alfresco One 5.x Developer's Guide]]
+***** [[pdfview:../notes/pdf/ALFRESCO_ONE_5X_DEVELOPERS_GUIDE_SECOND_EDITION.pdf::23][Alofresco One 5.x Developer's Guide]]
 ***** [[pdfview:../notes/pdf/EdgeROIDocumentManagement.pdf::1][Edge ROI Document Management]]
 ***** [[pdfview:../notes/pdf/ProfessionalAlfrescoPracticalSolutionsforEnterpriseContentManagement.pdf::1][Alfresco Practical Notes]]
 **** Links
